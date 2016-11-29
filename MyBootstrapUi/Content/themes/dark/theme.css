@@ -1,0 +1,8 @@
+﻿html.dark-theme {
+    background: #253138;
+}
+
+    html.dark-theme body {
+        background: #253138;
+        color: #98a6ad;
+    }
