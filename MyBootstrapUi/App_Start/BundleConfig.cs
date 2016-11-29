@@ -23,8 +23,12 @@ namespace MyBootstrapUi
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
+                      "~/Scripts/datatables.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/datatables.css",
                       "~/Content/site.css"));
         }
     }
