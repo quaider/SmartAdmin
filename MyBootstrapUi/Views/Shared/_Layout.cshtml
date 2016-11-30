@@ -9,12 +9,104 @@
 </head>
 <body>
     <!--begin page-->
-<div id="wrapper" class="right-bar-enabled">
-    <!--topbar start-->
-    <div class="topbar">
+    <div id="wrapper" class="right-bar-enabled">
+        <!--topbar start-->
+        <div class="topbar">
+            <!--logo-->
+            <div class="topbar-left">
+                <a href="javascript:void(0)" class="logo">
+                    <span>
+                        Admin
+                        <span>to</span>
+                    </span>
+                </a>
+            </div>
+            <!--Navbar-->
+            <div class="navbar navbar-default">
+                <div class="container">
+                    <!--page title-->
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="nav-item">
+                            <button class="navbar-minimize">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <h4 class="page-title">Dashboard</h4>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" class="nav-link">
+                                <span class="nav-icon">
+                                    <i class="fa fa-th"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" class="nav-link">
+                                <span class="badge badge-attension">6</span>
+                                <span class="nav-icon">
+                                    <i class="fa fa-weixin"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" class="nav-link">
+                                <span class="nav-icon">
+                                    <i class="fa fa-expand"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--left side menu-->
+        <div class="left side-menu">
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="text-muted menu-title">菜单导航</li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect">
+                            <i class="fa fa-tachometer "></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect">
+                            <i class="fa fa-expand"></i>
+                            <span>Layouts</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--main content-->
+        <div class="content-page">
+            <!--start content-->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card-box">
+                                <h4 class="header-title m-t-0 m-b-30">Input Types</h4>
+                                <div class="row">
 
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--start foot-->
+            <footer class="footer">
+                2016 © Adminto.
+            </footer>
+        </div>
     </div>
-</div>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

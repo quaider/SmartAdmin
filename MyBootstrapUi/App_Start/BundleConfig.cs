@@ -28,6 +28,7 @@ namespace MyBootstrapUi
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/datatables.css",
                       "~/Content/themes/dark/theme.css",
                       "~/Content/site.css"));
