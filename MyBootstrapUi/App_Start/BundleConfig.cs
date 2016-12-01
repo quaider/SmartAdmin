@@ -21,6 +21,8 @@ namespace MyBootstrapUi
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/jquery.nanoscroller.js",
+                      "~/Scripts/jquery.slimscroll.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
@@ -29,6 +31,7 @@ namespace MyBootstrapUi
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/nanoscroller.css",
                       "~/Content/datatables.css",
                       "~/Content/themes/dark/theme.css",
                       "~/Content/site.css"));

@@ -2,3 +2,16 @@
     ViewBag.Title = "Home Page";
 }
 
+@section Scripts{
+    <script>
+        $(function () {
+            $('.slimscrollleft').slimScroll({
+                height: 'auto',
+                position: 'right',
+                size: "5px",
+                color: '#dcdcdc',
+                wheelStep: 5
+            });
+        });
+    </script>
+}

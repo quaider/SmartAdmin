@@ -24,6 +24,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
 }
 
 #wrapper {
@@ -159,6 +160,10 @@ body {
     box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
 }
 
+.sidebar-inner {
+    height: 100%;
+}
+
 #sidebar-menu a {
     line-height: 1.3;
 }
@@ -174,22 +179,20 @@ body {
     text-decoration: none;
 }
 
-    #sidebar-menu > ul > li > a {
+    /*sidebar-menu下所有li a受影响*/
+    #sidebar-menu li > a {
         color: #ebebeb;
         display: block;
         padding: 12px 20px;
-        margin: 4px 0px;
-        border-left: 3px solid transparent;
     }
 
-        #sidebar-menu > ul > li > a > span {
+        #sidebar-menu li > a > span {
             vertical-align: middle;
         }
 
     #sidebar-menu ul li a i {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 17px;
-        margin-left: 3px;
         margin-right: 15px;
         text-align: center;
         vertical-align: middle;
@@ -201,29 +204,123 @@ body {
         color: #FFFFFF;
     }
 
+    #sidebar-menu > ul > li.active > a, #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus {
+        background-color: #00b8ce;
+        color: #FFFFFF;
+    }
+
     #sidebar-menu ul li .menu-arrow {
-        /*-webkit-transition: -webkit-transform 0.15s;
-        -o-transition: -o-transform 0.15s;
-        transition: transform .15s;*/
         position: absolute;
         right: 20px;
         display: inline-block;
-        /*
-        font-family: 'Material-Design-Iconic-Font';*/
         text-rendering: auto;
         line-height: 18px;
         font-size: 16px;
-        transition: all .15s ease-in-out;
+        transition: transform .15s;
+        transform: translate(0, 0);
+        font-family: FontAwesome;
     }
 
         #sidebar-menu ul li .menu-arrow:before {
-            font-family: FontAwesome;
             content: '\f105';
-            -webkit-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            transform: rotate(90deg);
         }
+
+    #sidebar-menu ul li.active > a > .menu-arrow {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #sidebar-menu > ul li ul {
+        z-index: 1;
+        background-color: #1b2533;
+        overflow: hidden;
+    }
+
+    #sidebar-menu ul.nav > li > a {
+        color: #a6a5a5;
+    }
+
+    #sidebar-menu > ul li ul > li > a {
+        padding-left: 56px;
+    }
+
+    #sidebar-menu .nav > li > a:hover, #sidebar-menu .nav > li > a:focus, #sidebar-menu .nav > li.has-sub.active > a {
+        background-color: #0f1722;
+        color: #FFFFFF;
+    }
+
+    /*二级菜单前的小竖线*/
+    #sidebar-menu > ul > li > ul:before {
+        background-color: rgba(120, 130, 140, 0.15);
+        width: 1px;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        display: block;
+    }
+
+    /*二级菜单前的小圆圈*/
+    #sidebar-menu > ul > li > ul > li:before, #sidebar-menu > ul > li > ul > li:after {
+        background-color: #1b2533;
+        border: 1px solid rgba(120, 130, 140, 0.15);
+        border-radius: 50%;
+        color: #a6a5a5;
+        content: "";
+        font-weight: 400;
+        height: 6px;
+        left: 27px;
+        position: absolute;
+        top: 18px;
+        -webkit-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+        width: 6px;
+        z-index: 2;
+    }
+
+    /*二级菜单前的竖线隔断(小圆圈外围)*/
+    #sidebar-menu > ul li ul li:after {
+        border: 0 none;
+        height: 8px;
+        left: 26px;
+        top: 17px;
+        width: 8px;
+        z-index: 1;
+    }
+
+    /*二级菜单激活时圆圈加大*/
+    #sidebar-menu > ul li ul li.active:after {
+        background-color: #37414f;
+        z-index: 2;
+        left: 25px;
+        top: 16px;
+        height: 10px;
+        width: 10px;
+    }
+
+    /*子菜单激活*/
+    #sidebar-menu > ul li ul li.active > a {
+        color: #FFFFFF;
+    }
+
+    /*3级菜单*/
+    #sidebar-menu > ul li ul > li > ul > li > a {
+        padding-left: 76px;
+    }
+
+    /*4级菜单*/
+    #sidebar-menu > ul li ul > li > ul > li > ul > li > a {
+        padding-left: 96px;
+    }
+
+    /*5级菜单*/
+    #sidebar-menu > ul li ul > li > ul > li > ul > li > ul > li > a {
+        padding-left: 116px;
+    }
 
 /*content-page*/
 .content-page {
