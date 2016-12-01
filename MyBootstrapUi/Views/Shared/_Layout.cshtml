@@ -74,21 +74,33 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-expand"></i>
                                 <span>Layouts</span>
                                 <span class="menu-arrow"></span>
                             </a>
+                            <ul class="nav">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="title">Test 1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="title">Test 2</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="has-sub active">
+                        <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-firefox"></i>
                                 <span>UI Elements</span>
                                 <span class="menu-arrow"></span>
                             </a>
-                            <ul class="nav collapse in">
-                                <li class="active">
+                            <ul class="nav">
+                                <li>
                                     <a href="javascript:void(0)">
                                         <span class="title">Panels</span>
                                     </a>
@@ -158,13 +170,13 @@
                             </a>
                         </li>
                         <!--start menu levels-->
-                        <li class="has-sub active">
+                        <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-sitemap"></i>
                                 <span>Menu Levels</span>
                                 <span class="menu-arrow"></span>
                             </a>
-                            <ul class="nav collapse in">
+                            <ul class="nav">
                                 <li>
                                     <a href="javascript:void(0)">
                                         <span class="title">Menu Level 1.1</span>
@@ -175,29 +187,29 @@
                                         <span class="title">Menu Level 1.2</span>
                                     </a>
                                 </li>
-                                <li class="has-sub active">
+                                <li class="has-sub">
                                     <a href="javascript:void(0)">
                                         <span class="title">Menu Level 1.3</span>
                                         <span class="menu-arrow"></span>
                                     </a>
-                                    <ul class="nav collapse in">
+                                    <ul class="nav">
                                         <li>
                                             <a href="javascript:void(0)">
                                                 <span class="title">Menu Level 2.1</span>
                                             </a>
                                         </li>
-                                        <li class="has-sub active">
+                                        <li class="has-sub">
                                             <a href="javascript:void(0)">
                                                 <span class="title">Menu Level 2.2</span>
                                                 <span class="menu-arrow"></span>
                                             </a>
-                                            <ul class="nav collapse in">
-                                                <li class="has-sub active">
+                                            <ul class="nav">
+                                                <li class="has-sub">
                                                     <a href="javascript:void(0)">
                                                         <span class="title">Menu Level 3.1</span>
                                                         <span class="menu-arrow"></span>
                                                     </a>
-                                                    <ul class="nav collapse in">
+                                                    <ul class="nav">
                                                         <li>
                                                             <a href="javascript:void(0)">
                                                                 <span class="title">Menu Level 4.1</span>
@@ -254,6 +266,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/datatable")
+    <script src="~/Scripts/JavaScript.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

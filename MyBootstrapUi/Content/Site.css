@@ -102,25 +102,20 @@ body {
         }
 
     .navbar-default .navbar-nav .nav-item > .nav-link {
-        line-height: 67px;
-    }
-
-    .navbar-default .navbar-nav > .nav-item > .nav-link {
+        line-height: 70px;
+        color: rgba(255, 255, 255, 0.9);
         border-radius: 0;
         padding: 0 15px;
+        font-size: 21px;
+        display: block;
     }
 
-        .navbar-default .navbar-nav > .nav-item > .nav-link > .nav-icon {
-            font-size: 21px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .navbar-default .navbar-nav > .nav-item > .nav-link > .badge {
-            position: absolute;
-            top: 13px;
-            left: 30px;
-            border: 2px solid #253138;
-        }
+    .navbar-default .navbar-nav > .nav-item > .nav-link > .badge {
+        position: absolute;
+        top: 13px;
+        left: 30px;
+        border: 2px solid #253138;
+    }
 
 .badge {
     border-radius: 2px;
@@ -179,6 +174,11 @@ body {
     text-decoration: none;
 }
 
+#sidebar-menu {
+    padding-bottom: 48px;
+    width: 100%;
+}
+
     /*sidebar-menu下所有li a受影响*/
     #sidebar-menu li > a {
         color: #ebebeb;
@@ -199,12 +199,12 @@ body {
         width: 20px;
     }
 
-    #sidebar-menu > ul > li > a:hover {
-        background-color: #00b8ce;
-        color: #FFFFFF;
+    /*激活的菜单子级菜单展开*/
+    #sidebar-menu ul li.active > ul, #sidebar-menu ul li.subdrop > ul {
+        display: block;
     }
 
-    #sidebar-menu > ul > li.active > a, #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus {
+    #sidebar-menu > ul > li.active > a, #sidebar-menu > ul > li.subdrop > a, #sidebar-menu > ul > li > a:hover {
         background-color: #00b8ce;
         color: #FFFFFF;
     }
@@ -225,7 +225,7 @@ body {
             content: '\f105';
         }
 
-    #sidebar-menu ul li.active > a > .menu-arrow {
+    #sidebar-menu ul li.subdrop > a > .menu-arrow {
         -ms-transform: rotate(90deg);
         -webkit-transform: rotate(90deg);
         -o-transform: rotate(90deg);
@@ -238,15 +238,25 @@ body {
         overflow: hidden;
     }
 
-    #sidebar-menu ul.nav > li > a {
-        color: #a6a5a5;
+    #sidebar-menu ul.nav {
+        display: none;
     }
+
+        #sidebar-menu ul.nav > li > a {
+            color: #a6a5a5;
+        }
 
     #sidebar-menu > ul li ul > li > a {
         padding-left: 56px;
     }
 
-    #sidebar-menu .nav > li > a:hover, #sidebar-menu .nav > li > a:focus, #sidebar-menu .nav > li.has-sub.active > a {
+    #sidebar-menu .nav > li > a:focus {
+        background-color: transparent;
+    }
+
+    #sidebar-menu .nav > li > a:hover,
+    #sidebar-menu .nav > li.active > a,
+    #sidebar-menu .nav > li.has-sub.subdrop > a {
         background-color: #0f1722;
         color: #FFFFFF;
     }
