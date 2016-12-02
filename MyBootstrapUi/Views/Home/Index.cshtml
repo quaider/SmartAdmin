@@ -14,7 +14,19 @@
                 wheelStep: 5
             });
 
+            toggle_slimscroll(".slimscrollleft");
             $("#sidebar-menu").smartMenu();
+
         });
+
+        function toggle_slimscroll(item) {
+            if ($("#wrapper").hasClass("sidebar-collapsed")) {
+                $(item).css("overflow", "inherit").parent().css("overflow", "inherit");
+                $(item).siblings(".slimScrollBar").css("visibility", "hidden");
+            } else {
+                $(item).css("overflow", "hidden").parent().css("overflow", "hidden");
+                $(item).siblings(".slimScrollBar").css("visibility", "visible");
+            }
+        }
     </script>
 }
