@@ -15,7 +15,7 @@
     padding-bottom: 12px;
 }
 
-a:hover, a:focus {
+a, a:hover, a:focus {
     outline: 0;
     text-decoration: none;
 }
@@ -708,6 +708,11 @@ body {
     min-width: 320px;
 }
 
+/*tabs*/
+.tab-content {
+    padding: 15px;
+}
+
 /*panel*/
 .panel {
     border: none;
@@ -729,21 +734,27 @@ body {
         .panel > .panel-heading > .panel-toolbar {
             margin-top: 3px;
             margin-right: 5px;
+            color: #6d7686;
         }
 
-        .panel > .panel-heading > .panel-tabs {
-            position: relative;
-            bottom: -5px;
-            margin-right: 5px;
-        }
+    .panel.panel-tabs > .panel-heading > .panel-tabs-title {
+        position: relative;
+        bottom: -5px;
+        margin-right: 5px;
+    }
 
-        .panel > .panel-heading .panel-title > i {
-            margin-right: 5px;
-        }
+    .panel > .panel-heading .panel-title > i {
+        margin-right: 5px;
+    }
 
-        .panel > .panel-heading .nav-tabs {
-            border-bottom-width: 0;
-        }
+    .panel > .panel-heading .nav-tabs {
+        border-bottom-width: 0;
+    }
+
+    .panel.panel-tabs .tab-content {
+        padding: 0px;
+        border: none;
+    }
 
     .panel .nav > li > a:hover, .panel .nav > li > a:focus {
         background-color: transparent;
@@ -757,12 +768,15 @@ body {
 
 .panel-default > .panel-heading {
     background-color: #fafafa;
-    border: 1px solid transparent;
     border-bottom-color: #e3e3e3;
 }
 
 .panel-default .nav > li > a, .panel-default .nav > li > a:hover {
     color: #333;
+}
+
+.panel .nav-tabs .tab-content {
+    padding: 0;
 }
 
 .panel .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -832,6 +846,144 @@ body {
     border: 1px solid #8d5e91;
     color: white;
 }
+
+/*panel style just has tab*/
+.panel.panel-just-tabs .nav-tabs {
+    border-bottom: 2px solid #eaeaea;
+}
+
+    .panel.panel-just-tabs .nav-tabs > li > a {
+        padding: 14px 20px;
+        color: #999;
+        border: none;
+    }
+
+    .panel.panel-just-tabs .nav-tabs > li.active > a {
+        border: none;
+        color: #333;
+    }
+
+    .panel.panel-just-tabs .nav-tabs > li {
+        margin-bottom: 0;
+    }
+
+        .panel.panel-just-tabs .nav-tabs > li:after {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 2px;
+            background: 0 0;
+            -webkit-transition: all .15s linear;
+            -moz-transition: all .15s linear;
+            transition: all .15s linear;
+            /*content is required*/
+            content: '';
+        }
+
+        .panel.panel-just-tabs .nav-tabs > li:focus:after,
+        .panel.panel-just-tabs .nav-tabs > li:hover:after {
+            background: #BBC8D3;
+        }
+
+        .panel.panel-just-tabs .nav-tabs > li.active:after,
+        .panel.panel-just-tabs .nav-tabs > li.active:focus:after,
+        .panel.panel-just-tabs .nav-tabs > li.active:hover:after {
+            background: #373f4e;
+        }
+
+/*這麽多顔色沒必要，後期清理掉*/
+.panel.panel-just-tabs.primary .nav-tabs > li.active:after,
+.panel.panel-just-tabs.primary .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.primary .nav-tabs > li.active:hover:after {
+    background: #00addc;
+}
+
+.panel.panel-just-tabs.success .nav-tabs > li.active:after,
+.panel.panel-just-tabs.success .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.success .nav-tabs > li.active:hover:after {
+    background: #8ac04e;
+}
+
+.panel.panel-just-tabs.teal .nav-tabs > li.active:after,
+.panel.panel-just-tabs.teal .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.teal .nav-tabs > li.active:hover:after {
+    background: #36b898;
+}
+
+.panel.panel-just-tabs.lilac .nav-tabs > li.active:after,
+.panel.panel-just-tabs.lilac .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.lilac .nav-tabs > li.active:hover:after {
+    background: #8d5e91;
+}
+
+.panel.panel-just-tabs.warning .nav-tabs > li.active:after,
+.panel.panel-just-tabs.warning .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.warning .nav-tabs > li.active:hover:after {
+    background: #f6b93d;
+}
+
+.panel.panel-just-tabs.danger .nav-tabs > li.active:after,
+.panel.panel-just-tabs.danger .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.danger .nav-tabs > li.active:hover:after {
+    background: #e8533a;
+}
+
+.panel.panel-just-tabs.info .nav-tabs > li.active:after,
+.panel.panel-just-tabs.info .nav-tabs > li.active:focus:after,
+.panel.panel-just-tabs.info .nav-tabs > li.active:hover:after {
+    background: #5fd2e8;
+}
+
+/*panel group*/
+.panel-group .panel {
+    border-radius: 0;
+}
+
+.panel-group .panel-heading {
+    padding: 5px 15px 5px 5px;
+}
+
+.panel-group .panel > .panel-heading .panel-title {
+    padding: 0 10px;
+}
+
+.panel-group.panel-group-joined .panel + .panel {
+    border-top: 1px solid #e3e3e3;
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.panel-group.panel-group-joined .panel.panel-success + .panel.panel-success {
+    border-top: 1px solid #7ab03f;
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.panel-group {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+    .panel-group .panel .panel-heading a[data-toggle=collapse] {
+        padding: 10px 0;
+        display: block;
+    }
+
+        .panel-group .panel .panel-heading a[data-toggle=collapse].collapsed:before {
+            content: '\f067';
+        }
+
+        .panel-group .panel .panel-heading a[data-toggle=collapse]:before {
+            content: '\f068';
+            display: block;
+            float: right;
+            font-family: 'FontAwesome';
+            font-size: 12px;
+            text-align: right;
+            width: 16px;
+            color: #797979;
+        }
 
 /*按钮*/
 .btn {
