@@ -16,46 +16,101 @@
             <div class="topbar-left">
                 <a href="javascript:void(0)" class="logo">
                     <span>
-                        Admin
-                        <span>to</span>
+                        Smart
+                        <span>Admin</span>
                     </span>
                 </a>
             </div>
             <!--Navbar-->
-            <div class="navbar navbar-default">
+            <div class="navbar navbar-default shadow">
                 <div class="container">
                     <!--page title-->
                     <ul class="nav navbar-nav pull-left">
                         <li class="nav-item">
-                            <button class="navbar-minimize">
-                                <i class="fa fa-bars"></i>
-                            </button>
+                            <a href="javascript:void(0)" class="nav-link navbar-minimize">
+                                <i class="material-icons" icon-modern="menu">&#xE5D2;</i>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <h4 class="page-title">Dashboard</h4>
-                        </li>
+                        <!--面包屑导航是否考虑放在此处以节省空间? 参考admin to-->
+                        @*<li class="nav-item">
+                                <h4 class="page-title">Dashboard</h4>
+                            </li>*@
                     </ul>
                     <ul class="nav navbar-nav pull-right">
+                        <li class="nav-item dropdown dropdown-right">
+                            <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons" icon-modern="apps">&#xE5C3;</i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg p-bt-12" aria-labelledby="dLabel">
+                                <div class="container-fluid">
+                                    <div class="row text-center">
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-primary">&#xE8A1;</i>
+                                                    <br />
+                                                    Payment
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-success">&#xE853;</i>
+                                                    <br />
+                                                    Account
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-inverse">&#xE0B9;</i>
+                                                    <br />
+                                                    Comments
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-danger">&#xE158;</i>
+                                                    <br />
+                                                    Messages
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-lilac">&#xE2BD;</i>
+                                                    <br />
+                                                    Cloud
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="p-bt-12">
+                                                <a href="javascript:void(0)" class="text-default">
+                                                    <i class="material-icons f-36 text-teal">&#xE8B8;</i>
+                                                    <br />
+                                                    Settings
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <span class="nav-icon">
-                                    <i class="fa fa-th"></i>
-                                </span>
+                            <a href="javascript:void(0)" class="nav-link" side-bar-index="1">
+                                <span class="badge badge-attension">8</span>
+                                <i class="material-icons" icon-modern="announcement">&#xE85A;</i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">
-                                <span class="badge badge-attension">6</span>
-                                <span class="nav-icon">
-                                    <i class="fa fa-weixin"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <span class="nav-icon">
-                                    <i class="fa fa-expand"></i>
-                                </span>
+                                <i class="material-icons" icon-modern="fullscreen">&#xE5D0;</i>
                             </a>
                         </li>
                     </ul>
@@ -71,24 +126,24 @@
                         <li>
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-tachometer "></i>
-                                <span>Dashboard</span>
+                                <span>控制面板</span>
                             </a>
                         </li>
                         <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-expand"></i>
-                                <span>Layouts</span>
+                                <span>页面布局</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav">
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <span class="title">Test 1</span>
+                                        <span class="title">布局 1</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <span class="title">Test 2</span>
+                                        <span class="title">布局 2</span>
                                     </a>
                                 </li>
                             </ul>
@@ -96,23 +151,23 @@
                         <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-firefox"></i>
-                                <span>UI Elements</span>
+                                <span>UI 元素</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav">
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" data-url="/Home/Panels">
                                         <span class="title">Panels</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-url="/Home/Tabs">
+                                        <span class="title">Tabs</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)">
                                         <span class="title">Buttons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="title">Typography</span>
                                     </a>
                                 </li>
                                 <li>
@@ -160,73 +215,73 @@
                         <li>
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-envelope"></i>
-                                <span>Email</span>
+                                <span>电子邮件</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-area-chart"></i>
-                                <span>Charts</span>
+                                <span>图表Charts</span>
                             </a>
                         </li>
                         <!--start menu levels-->
                         <li class="has-sub">
                             <a href="javascript:void(0)" class="waves-effect">
                                 <i class="fa fa-sitemap"></i>
-                                <span>Menu Levels</span>
+                                <span>层级菜单</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav">
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <span class="title">Menu Level 1.1</span>
+                                        <span class="title">菜单 1.1</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <span class="title">Menu Level 1.2</span>
+                                        <span class="title">菜单 1.2</span>
                                     </a>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">
-                                        <span class="title">Menu Level 1.3</span>
+                                        <span class="title">菜单 1.3</span>
                                         <span class="menu-arrow"></span>
                                     </a>
                                     <ul class="nav">
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <span class="title">Menu Level 2.1</span>
+                                                <span class="title">菜单 2.1</span>
                                             </a>
                                         </li>
                                         <li class="has-sub">
                                             <a href="javascript:void(0)">
-                                                <span class="title">Menu Level 2.2</span>
+                                                <span class="title">菜单 2.2</span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <ul class="nav">
                                                 <li class="has-sub">
                                                     <a href="javascript:void(0)">
-                                                        <span class="title">Menu Level 3.1</span>
+                                                        <span class="title">菜单 3.1</span>
                                                         <span class="menu-arrow"></span>
                                                     </a>
                                                     <ul class="nav">
                                                         <li>
                                                             <a href="javascript:void(0)">
-                                                                <span class="title">Menu Level 4.1</span>
+                                                                <span class="title">菜单 4.1</span>
                                                             </a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <a href="javascript:void(0)">
-                                                        <span class="title">Menu Level 3.2</span>
+                                                        <span class="title">菜单 3.2</span>
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <span class="title">Menu Level 2.3</span>
+                                                <span class="title">菜单 2.3</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -242,31 +297,35 @@
         <div class="content-page">
             <!--start content-->
             <div class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card-box">
-                                <h4 class="header-title m-t-0 m-b-30">Input Types</h4>
-                                <div class="row">
-                                    @RenderBody()
-                                </div>
-                                <!-- end row -->
-                            </div>
-                        </div>
-                    </div>
+                <div class="container" id="contentLayout">
+                    @RenderBody()
                 </div>
             </div>
             <!--start foot-->
             <footer class="footer">
-                2016 © Adminto.
+                2016 &copy; Smart Admin. Created by Quaider Zhang.
             </footer>
+        </div>
+        <!--right sidebar-->
+        <div class="side-bar right-bar">
+            <a href="javascript:void(0);" class="right-bar-toggle">
+                <i class="material-icons" icon-modern="highlight_off">&#xE888;</i>
+            </a>
+            <h4 class="">Notifications</h4>
         </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/datatable")
+    <script src="~/Scripts/pace.min.js"></script>
     <script src="~/Scripts/quaider.menu.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script>
+        $(function () {
+            QuaiderApp.start();
+        })
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

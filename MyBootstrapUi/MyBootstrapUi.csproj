@@ -139,6 +139,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\material-icons.css" />
+    <Content Include="fonts\MaterialIcons-Regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -154,11 +156,21 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\codepoints" />
+    <Content Include="fonts\MaterialIcons-Regular.eot" />
+    <Content Include="fonts\MaterialIcons-Regular.ijmap" />
+    <Content Include="fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="fonts\MaterialIcons-Regular.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="fonts\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\datatables.js" />
     <Content Include="Scripts\datatables.min.js" />
+    <Content Include="Scripts\pace.js" />
+    <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\quaider.menu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -188,6 +200,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Panels.cshtml" />
+    <Content Include="Views\Home\Tabs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

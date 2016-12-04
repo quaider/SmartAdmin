@@ -33,7 +33,7 @@ namespace MyBootstrapUi
                       "~/Content/font-awesome.css",
                       "~/Content/nanoscroller.css",
                       "~/Content/datatables.css",
-                      "~/Content/themes/dark/theme.css",
+                      //"~/Content/themes/dark/theme.css",
                       "~/Content/site.css"));
         }
     }

@@ -1,4 +1,7 @@
-﻿(function ($) {
+﻿/*
+ * 应用程序菜单初始化
+ */
+(function ($) {
 
     $.fn.extend({
         smartMenu: function () {
@@ -13,7 +16,8 @@
                     activeParentToTop($(activeMenu));
                 });
 
-                me.find("li > a").bind("click", function () {
+                //菜单点击绑定事件
+                me.find("li > a").bind("click", function (e) {
                     var hasChildren = $(this).siblings("ul").find("li").length > 0;
                     if (!hasChildren) {
                         //点击具体菜单的操作逻辑，如跳转等
@@ -30,6 +34,19 @@
                         //me.find(" > ul > li.subdrop").not(parentMenu).removeClass("subdrop").find(" > ul").slideUp(200);
 
                         //1.3 打开页面
+                        var url = $(this).attr("data-url");
+                        if (url) {
+                            $("#contentLayout").load(url + "?q=" + Math.random());
+                        }
+
+                        return;
+                    }
+
+                    //一级菜单(有子节点)取消点击事件
+                    if ($("#wrapper").hasClass("sidebar-collapsed") && $(this).parent("li.has-sub").parent("ul").parent().attr("id") === "sidebar-menu") {
+
+                        e.preventDefault();
+                        e.stopPropagation();
 
                         return;
                     }
@@ -63,6 +80,25 @@
 
                 });
 
+                //菜单收缩与展开
+                $("#wrapper .topbar .navbar-minimize").bind("click", function () {
+                    $("#wrapper").toggleClass("sidebar-collapsed").find("ul.nav").removeAttr("style");
+                    //初始化菜单slimscroll
+                    $.toggle_slimscroll(".slimscrollleft");
+                });
+
+                //sidebar收缩与展开
+                $("#wrapper .topbar a[side-bar-index]").bind("click", function () {
+                    $("#wrapper").toggleClass("right-bar-enabled");
+                });
+
+                // right side-bar toggle
+                $('.right-bar-toggle').on('click', function (e) {
+                    $('#wrapper').toggleClass('right-bar-enabled');
+                });
+
+                //初始化菜单slimscroll
+                $.toggle_slimscroll(".slimscrollleft");
             });
 
             function activeParentToTop(menu) {
@@ -74,6 +110,25 @@
                 activeParentToTop(parent);
             }
         }
+    });
+
+    $.extend({
+
+        /**
+         * 处理菜单收缩与展开时的slimscroll
+         * @param {jquery object} item 
+         */
+        toggle_slimscroll: function (item) {
+            if ($("#wrapper").hasClass("sidebar-collapsed")) {
+                $(item).css("overflow", "inherit").parent().css("overflow", "inherit");
+                $(item).siblings(".slimScrollBar").css("visibility", "hidden");
+            }
+            else {
+                $(item).css("overflow", "hidden").parent().css("overflow", "hidden");
+                $(item).siblings(".slimScrollBar").css("visibility", "visible");
+            }
+        }
+
     });
 
 })(jQuery);

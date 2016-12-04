@@ -8,9 +8,29 @@ namespace MyBootstrapUi.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// 模仿网络环境
+        /// </summary>
+        /// <param name="filterContext"></param>
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            System.Threading.Thread.Sleep(800);
+            base.OnActionExecuting(filterContext);
+        }
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Panels()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Tabs()
+        {
+            return PartialView();
         }
     }
 }

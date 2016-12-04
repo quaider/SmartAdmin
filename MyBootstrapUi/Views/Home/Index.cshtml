@@ -1,32 +1,20 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-title-box">
+            <h4 class="page-title pull-left">控制面板</h4>
+            <ol class="breadcrumb pull-right">
+                <li>
+                    <a href="javascript:void(0)">Smart Admin</a>
+                </li>
+                <li class="active">
+                    控制面板
+                </li>
+            </ol>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
 
-@section Scripts{
-    <script>
-        $(function () {
-            $('.slimscrollleft').slimScroll({
-                height: 'auto',
-                position: 'right',
-                size: "5px",
-                color: '#000',
-                opacity: .4,
-                wheelStep: 5
-            });
-
-            toggle_slimscroll(".slimscrollleft");
-            $("#sidebar-menu").smartMenu();
-
-        });
-
-        function toggle_slimscroll(item) {
-            if ($("#wrapper").hasClass("sidebar-collapsed")) {
-                $(item).css("overflow", "inherit").parent().css("overflow", "inherit");
-                $(item).siblings(".slimScrollBar").css("visibility", "hidden");
-            } else {
-                $(item).css("overflow", "hidden").parent().css("overflow", "hidden");
-                $(item).siblings(".slimScrollBar").css("visibility", "visible");
-            }
-        }
-    </script>
-}
