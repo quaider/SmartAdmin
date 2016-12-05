@@ -801,49 +801,49 @@ body {
 
 .panel-primary > .panel-heading {
     background-color: #00B1E1;
-    border: 1px solid #00addc;
+    border-color: #00addc;
     color: white;
 }
 
 .panel-success > .panel-heading {
     background-color: #8CC152;
-    border: 1px solid #8ac04e;
+    border-color: #8ac04e;
     color: white;
 }
 
 .panel-danger > .panel-heading {
     background-color: #E9573F;
-    border: 1px solid #e8533a;
+    border-color: #e8533a;
     color: white;
 }
 
 .panel-warning > .panel-heading {
     background-color: #F6BB42;
-    border: 1px solid #f6b93d;
+    border-color: #f6b93d;
     color: white;
 }
 
 .panel-info > .panel-heading {
     background-color: #63D3E9;
-    border: 1px solid #5fd2e8;
+    border-color: #5fd2e8;
     color: white;
 }
 
 .panel-inverse > .panel-heading {
     background-color: #2A2A2A;
-    border: 1px solid #272727;
+    border-color: #272727;
     color: white;
 }
 
 .panel-teal .panel-heading {
     background-color: #37BC9B;
-    border: 1px solid #36b898;
+    border-color: #36b898;
     color: white;
 }
 
 .panel-lilac > .panel-heading {
     background-color: #906094;
-    border: 1px solid #8d5e91;
+    border-color: #7b527e;
     color: white;
 }
 
@@ -955,11 +955,42 @@ body {
     box-shadow: none;
 }
 
-.panel-group.panel-group-joined .panel.panel-success + .panel.panel-success {
+.panel-group.panel-group-joined .panel.panel-success + .panel.panel-success,
+.panel-group .panel-success > .panel-heading + .panel-collapse > .panel-body {
     border-top: 1px solid #7ab03f;
-    margin-top: 0;
-    box-shadow: none;
 }
+
+.panel-group.panel-group-joined .panel.panel-danger + .panel.panel-danger,
+.panel-group .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #e53b1f;
+}
+
+.panel-group.panel-group-joined .panel.panel-warning + .panel.panel-warning,
+.panel-group .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #f4af20;
+}
+
+.panel-group.panel-group-joined .panel.panel-lilac + .panel.panel-lilac,
+.panel-group .panel-lilac > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #7b527e;
+}
+
+.panel-group.panel-group-joined .panel.panel-teal + .panel.panel-teal,
+.panel-group .panel-teal > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #2fa084;
+}
+
+.panel-group.panel-group-joined .panel.panel-inverse + .panel.panel-inverse,
+.panel-group .panel-inverse > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #212121;
+}
+
+.panel-group.panel-group-joined .panel.panel-primary + .panel.panel-primary,
+.panel-group .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #0095bd;
+}
+
+
 
 .panel-group {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
@@ -984,6 +1015,17 @@ body {
             width: 16px;
             color: #797979;
         }
+
+    .panel-group .panel.panel-success .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-info .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-teal .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-lilac .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-danger .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-warning .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-inverse .panel-heading a[data-toggle=collapse]:before,
+    .panel-group .panel.panel-primary .panel-heading a[data-toggle=collapse]:before {
+        color: rgba(255,255,255,0.8);
+    }
 
 /*按钮*/
 .btn {
