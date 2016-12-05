@@ -14,7 +14,7 @@ namespace MyBootstrapUi.Controllers
         /// <param name="filterContext"></param>
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            System.Threading.Thread.Sleep(800);
+            System.Threading.Thread.Sleep(500);
             base.OnActionExecuting(filterContext);
         }
 
@@ -28,7 +28,22 @@ namespace MyBootstrapUi.Controllers
             return PartialView();
         }
 
+        public ActionResult Designer()
+        {
+            return PartialView();
+        }
+
         public ActionResult Tabs()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Buttons()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Modals()
         {
             return PartialView();
         }

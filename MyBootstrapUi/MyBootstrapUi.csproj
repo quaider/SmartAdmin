@@ -202,6 +202,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Panels.cshtml" />
     <Content Include="Views\Home\Tabs.cshtml" />
+    <Content Include="Views\Home\Buttons.cshtml" />
+    <Content Include="Views\Home\Modals.cshtml" />
+    <Content Include="Views\Home\Designer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
