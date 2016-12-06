@@ -47,5 +47,10 @@ namespace MyBootstrapUi.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Colors()
+        {
+            return PartialView();
+        }
     }
 }
