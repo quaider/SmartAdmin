@@ -844,7 +844,7 @@ body {
 
 .panel-lilac > .panel-heading {
     background-color: #906094;
-    border-color: #7b527e;
+    border-color: #8b5c8f;
     color: white;
 }
 
@@ -958,7 +958,7 @@ body {
 
 .panel-group.panel-group-joined .panel.panel-success + .panel.panel-success,
 .panel-group .panel-success > .panel-heading + .panel-collapse > .panel-body {
-    border-top: 1px solid #7ab03f;
+    border-top: 1px solid #81b449;
 }
 
 .panel-group.panel-group-joined .panel.panel-danger + .panel.panel-danger,
@@ -973,12 +973,12 @@ body {
 
 .panel-group.panel-group-joined .panel.panel-lilac + .panel.panel-lilac,
 .panel-group .panel-lilac > .panel-heading + .panel-collapse > .panel-body {
-    border-top: 1px solid #7b527e;
+    border-top: 1px solid #825686;
 }
 
 .panel-group.panel-group-joined .panel.panel-teal + .panel.panel-teal,
 .panel-group .panel-teal > .panel-heading + .panel-collapse > .panel-body {
-    border-top: 1px solid #2fa084;
+    border-top: 1px solid #30ab8d;
 }
 
 .panel-group.panel-group-joined .panel.panel-inverse + .panel.panel-inverse,
@@ -988,7 +988,7 @@ body {
 
 .panel-group.panel-group-joined .panel.panel-primary + .panel.panel-primary,
 .panel-group .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-    border-top: 1px solid #0095bd;
+    border-top: 1px solid #00a2ce;
 }
 
 
