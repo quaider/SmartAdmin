@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace MyBootstrapUi
+namespace SmartAdmin
 {
     public class BundleConfig
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MyBootstrapUi
+namespace SmartAdmin
 {
     public class FilterConfig
     {
