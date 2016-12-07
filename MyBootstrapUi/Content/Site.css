@@ -668,7 +668,10 @@ body {
     color: #181818;
 }
 
-/*pace*/
+/*!
+ * pace
+ * http://fian.my.id/Waves 
+ */
 .pace {
     -webkit-pointer-events: none;
     pointer-events: none;
@@ -963,7 +966,7 @@ body {
 
 .panel-group.panel-group-joined .panel.panel-danger + .panel.panel-danger,
 .panel-group .panel-danger > .panel-heading + .panel-collapse > .panel-body {
-    border-top: 1px solid #e53b1f;
+    border-top: 1px solid #e04c34;
 }
 
 .panel-group.panel-group-joined .panel.panel-warning + .panel.panel-warning,
@@ -991,7 +994,10 @@ body {
     border-top: 1px solid #00a2ce;
 }
 
-
+.panel-group.panel-group-joined .panel.panel-info + .panel.panel-info,
+.panel-group .panel-info > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #55c9e0;
+}
 
 .panel-group {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
@@ -1028,8 +1034,68 @@ body {
         color: rgba(255,255,255,0.8);
     }
 
+
 /*按钮*/
 .btn {
-    background-color: transparent;
-    transition: all 0.2s;
+    transition: all 0.15s;
+    border-radius: 2px;
+    font-size: 12px;
+    box-shadow: -1px -0px 4px 1px rgba(255,255,255,.12) inset;
+}
+
+    .btn.btn-transparent {
+        background-color: transparent;
+    }
+
+.btn-success {
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.btn-primary {
+    background-color: #00B1E1;
+    border-color: #00addc;
+}
+
+    .btn-primary:hover, .btn-primary:focus, .btn-primary.focus {
+        background-color: #01a1cd;
+        border-color: #0191b8;
+    }
+
+    .btn-primary:active, .btn-primary.active, .btn-primary:active:focus {
+        background-color: #0191b8;
+        border-color: #0085a9;
+    }
+
+.btn-info {
+    background-color: #63D3E9;
+    border-color: #5fd2e8;
+}
+
+.btn-warning {
+    background-color: #F6BB42;
+    border-color: #f6b93d;
+}
+
+.btn-danger {
+    background-color: #E9573F;
+    border-color: #e8533a;
+}
+
+.btn-teal {
+    background-color: #37BC9B;
+    border-color: #36b898;
+    color: #fff;
+}
+
+.btn-lilac {
+    background-color: #906094;
+    border-color: #8b5c8f;
+    color: #fff;
+}
+
+.btn-inverse {
+    background-color: #2A2A2A;
+    border-color: #272727;
+    color: #fff;
 }
