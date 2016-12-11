@@ -18,7 +18,38 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        
+    <div class="col-md-8">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <td>FirstName</td>
+                    <td>LastName</td>
+                    <td>Gender</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < 1000; i++)
+            {
+                    <tr>
+                        <td>Quaider @i</td>
+                        <td>Zhang @i</td>
+                        <td>男</td>
+                        <td>@i</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
+@section scripts{
+    <script>
+        $(function () {
+            $("table.table").dataTable({
+                "language": {
+                    "url": "Scripts/i18n/datatable.lang.chinese.json"
+                }
+            });
+        });
+    </script>
+}

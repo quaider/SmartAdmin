@@ -171,8 +171,10 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datatable.pagination.input.js" />
     <Content Include="Scripts\datatables.js" />
     <Content Include="Scripts\datatables.min.js" />
+    <None Include="Scripts\i18n\datatable.lang.chinese.json" />
     <Content Include="Scripts\pace.js" />
     <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\quaider.menu.js" />
@@ -209,6 +211,8 @@
     <Content Include="Views\Home\Modals.cshtml" />
     <Content Include="Views\Home\Designer.cshtml" />
     <Content Include="Views\Home\Colors.cshtml" />
+    <Content Include="Views\Home\BootstrapElements.cshtml" />
+    <Content Include="Views\Home\Alerts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

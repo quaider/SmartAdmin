@@ -52,5 +52,15 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult BootstrapElements()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Alerts()
+        {
+            return PartialView();
+        }
     }
 }
