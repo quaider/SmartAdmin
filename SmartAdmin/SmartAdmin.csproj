@@ -213,6 +213,7 @@
     <Content Include="Views\Home\Colors.cshtml" />
     <Content Include="Views\Home\BootstrapElements.cshtml" />
     <Content Include="Views\Home\Alerts.cshtml" />
+    <Content Include="Views\Home\ProgressBars.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

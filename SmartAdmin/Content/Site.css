@@ -43,10 +43,29 @@
     margin: 0 !important;
 }
 
+/* ========================================================================
+ * Bootstrap 布局 override
+ * ======================================================================== */
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 a, a:hover, a:focus {
     outline: 0;
     text-decoration: none;
 }
+
+p {
+    line-height: 1.8;
+}
+
+
 
 html {
     position: relative;
@@ -1390,7 +1409,6 @@ body {
  * ======================================================================== */
 .label {
     border-radius: 2px;
-    padding: 0.3em 0.6em;
     font-weight: 500;
 }
 
@@ -1774,3 +1792,63 @@ body {
     .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
         color: #e9e9e9;
     }
+
+/* ========================================================================
+ * PROGRESS BAR
+ * ======================================================================== */
+.progress {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+    .progress.progress-lg {
+        height: 25px;
+    }
+
+    .progress.progress-sm {
+        height: 15px;
+    }
+
+    .progress.progress-xs {
+        height: 10px;
+    }
+
+    .progress.progress-xxs {
+        height: 5px;
+    }
+
+.progress-bar-primary {
+    background-color: #00B1E1;
+}
+
+.progress-bar-success {
+    background-color: #8CC152;
+}
+
+.progress-bar-info {
+    background-color: #63D3E9;
+}
+
+.progress-bar-warning {
+    background-color: #F6BB42;
+}
+
+.progress-bar-danger {
+    background-color: #E9573F;
+}
+
+.progress-bar-lilac {
+    background-color: #906094;
+}
+
+.progress-bar-inverse {
+    background-color: #2A2A2A;
+}
+
+.progress-bar-teal {
+    background-color: #37BC9B;
+}

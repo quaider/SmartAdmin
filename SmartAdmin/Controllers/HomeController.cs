@@ -62,5 +62,10 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult ProgressBars()
+        {
+            return PartialView();
+        }
     }
 }
