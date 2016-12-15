@@ -67,5 +67,15 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult GeneralForms()
+        {
+            return PartialView();
+        }
+
+        public ActionResult AdvancedForms()
+        {
+            return PartialView();
+        }
     }
 }

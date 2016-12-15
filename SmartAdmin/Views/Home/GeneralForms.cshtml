@@ -1,0 +1,375 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <div class="page-title-box">
+            <h4 class="page-title pull-left">常规表单</h4>
+            <ol class="breadcrumb pull-right">
+                <li>
+                    <a href="javascript:void(0)">Smart Admin</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">表单元素</a>
+                </li>
+                <li class="active">
+                    常规表单
+                </li>
+            </ol>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--begin form elements-->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">输入框类型</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">用户名</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" value="admin" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">邮箱</label>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control" placeholder="请输入电子邮箱地址" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">密码</label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control" value="passwordDemo" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">工作经历</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">只读</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" readonly="readonly" value="只读输入框">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">禁用</label>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control" disabled="disabled" value="我被禁用了..." />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">文本显示</label>
+                                <div class="col-md-10">
+                                    <p class="form-control-static">email@example.com</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">帮助文本</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" placeholder="下发显示帮助文本">
+                                    <span class="help-block"><small>请输入2sin60 * (21 x 3 + 5 * 60 + 7^4) / 66 的值(保留2位小数).</small></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">下拉框</label>
+                                <div class="col-md-10">
+                                    <select class="form-control">
+                                        <option>北京市</option>
+                                        <option>上海市</option>
+                                        <option>深圳市</option>
+                                        <option>武汉市</option>
+                                        <option>杭州市</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">多选框</label>
+                                <div class="col-md-10">
+                                    <select multiple="multiple" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">输入框状态</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-success">
+                        <label class="col-md-3 control-label" for="state-success">Success</label>
+                        <div class="col-md-6">
+                            <input type="text" id="state-success" name="state-success" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="col-md-3 control-label" for="state-warning">Warning</label>
+                        <div class="col-md-6">
+                            <input type="text" id="state-warning" name="state-warning" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+                    <div class="form-group has-error">
+                        <label class="col-md-3 control-label" for="state-danger">Danger</label>
+                        <div class="col-md-6">
+                            <input type="text" id="state-danger" name="state-danger" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+                    <div class="form-group has-success has-feedback">
+                        <label class="col-sm-3 control-label">Input with success </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-warning has-feedback">
+                        <label class="col-sm-3 control-label">Input with warning </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control inputmask">
+                            <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-error has-feedback">
+                        <label class="col-sm-3 control-label">Input with error </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control inputmask">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-3 control-label">Custom Icons</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Custom icons">
+                            <i class="fa fa-envelope form-control-feedback l-h-34"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">输入框尺寸</h3>
+            </div>
+            <div class="panel-body">
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="example-input-small">Small</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm" placeholder=".input-sm">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="example-input-normal">Normal</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="example-input-normal" name="example-input-normal" class="form-control" placeholder="Normal">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="example-input-large">Large</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="example-input-large" name="example-input-large" class="form-control input-lg" placeholder=".input-lg">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Grid Sizes</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder=".col-sm-4">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-5 col-sm-offset-3">
+                            <input type="text" class="form-control" placeholder=".col-sm-5">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="text" class="form-control" placeholder=".col-sm-6">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <input type="text" class="form-control" placeholder=".col-sm-9">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">分组输入框</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="example-input1-group1">Static</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <input type="email" id="example-input2-group1" name="example-input2-group1" class="form-control" placeholder="Email">
+                                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                <input type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder="..">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="example-input1-group2">Buttons</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search"></i></button>
+                                </span>
+                                <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control" placeholder="Search">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <input type="email" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="Email">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary">Submit</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-facebook"></i></button>
+                                </span>
+                                <input type="text" id="example-input3-group2" name="example-input3-group2" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-twitter"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="example-input1-group3">Dropdowns</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)">Action</a></li>
+                                        <li><a href="javascript:void(0)">Another action</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="javascript:void(0)">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" id="example-input1-group3" name="example-input1-group3" class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <input type="email" id="example-input2-group3" name="example-input2-group3" class="form-control" placeholder="Email">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="javascript:void(0)">Action</a></li>
+                                        <li><a href="javascript:void(0)">Another action</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="javascript:void(0)">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-2">
+                            <div class="input-group m-t-15">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary" style="overflow: hidden; position: relative">Action</button>
+                                    <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative"><span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)">Action</a></li>
+                                        <li><a href="javascript:void(0)">Another action</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="javascript:void(0)">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" id="example-input3-group3" name="example-input3-group3" class="form-control" placeholder="..">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative"><span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="javascript:void(0)">Action</a></li>
+                                        <li><a href="javascript:void(0)">Another action</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="javascript:void(0)">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">Checkboxs</h3>
+            </div>
+            <div class="panel-body">
+                <div class="ckbox ckbox-default">
+                    <input id="checkbox-default2" checked="checked" type="checkbox">
+                    <label for="checkbox-default2">Checkbox Default</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">Radios</h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+</div>

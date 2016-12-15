@@ -6,6 +6,22 @@
     margin-top: 0px !important;
 }
 
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
 .m-b-0 {
     margin-bottom: 0;
 }
@@ -1123,9 +1139,10 @@ body {
 
 /*按钮*/
 .btn {
-    transition: all 0.15s;
+    transition: all 0.25s;
     border-radius: 2px;
     font-size: 12px;
+    line-height: 1.42857143;
     /*box-shadow: -1px -0px 4px 1px rgba(255,255,255,.15) inset;*/
 }
 
@@ -1852,3 +1869,139 @@ body {
 .progress-bar-teal {
     background-color: #37BC9B;
 }
+
+/* ========================================================================
+ * FORM ELEMENTS
+ * ======================================================================== */
+.form-control {
+    box-shadow: none !important;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    transition: border-color linear .25s;
+    /*后台系统文本框不宜过高*/
+    height: 31px;
+    font-size: 12px;
+}
+
+    .form-control[readonly] {
+        background-color: #f9f9f9;
+    }
+
+    .form-control:focus {
+        border: 1px solid #00b1e1;
+    }
+
+.form-control-feedback {
+    height: 31px;
+    line-height: 31px;
+}
+
+.input-sm {
+    height: 29px;
+    line-height: 29px;
+    padding: 5px 12px;
+}
+
+    .input-sm + .form-control-feedback, .input-group-sm + .form-control-feedback, .form-group-sm .form-control + .form-control-feedback {
+        width: 29px;
+        height: 29px;
+        line-height: 29px;
+    }
+
+.input-lg {
+    height: 38px;
+    line-height: 38px;
+    padding: 8px 12px;
+}
+
+    .input-lg + .form-control-feedback, .input-group-lg + .form-control-feedback, .form-group-lg .form-control + .form-control-feedback {
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+    }
+
+.input-group .form-control:focus {
+    z-index: 2;
+}
+
+.input-group .form-control {
+    position: initial;
+}
+
+.input-group-addon {
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.form-horizontal .has-feedback .form-control-feedback {
+    right: 10px;
+}
+
+.input-group-btn + .form-control {
+    border-left: 0;
+}
+
+.has-success .form-control {
+    border-color: #8CC152;
+}
+
+.has-success .control-label {
+    color: #8CC152;
+}
+
+.has-success .form-control:focus {
+    border-color: #72a53b;
+}
+
+.has-success .form-control-feedback {
+    color: #8CC152;
+}
+
+.has-success .help-inline {
+    color: #8CC152;
+}
+
+.has-warning .control-label {
+    color: #F6BB42;
+}
+
+.has-warning .form-control {
+    border-color: #F6BB42;
+}
+
+    .has-warning .form-control:focus {
+        border-color: #d98919;
+    }
+
+.has-warning .form-control-feedback {
+    color: #F6BB42;
+}
+
+.has-warning .help-inline {
+    color: #F6BB42;
+}
+
+.has-error .control-label {
+    color: #E9573F;
+}
+
+.has-error .form-control {
+    border-color: #E9573F;
+}
+
+    .has-error .form-control:focus {
+        border-color: #c02b27;
+    }
+
+.has-error .form-control-feedback {
+    color: #E9573F;
+}
+
+.has-error .help-inline {
+    color: #E9573F;
+}
+
+
+/* ========================================================================
+ * CHECKBOX
+ * ======================================================================== */

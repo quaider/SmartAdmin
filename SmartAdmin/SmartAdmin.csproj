@@ -214,6 +214,8 @@
     <Content Include="Views\Home\BootstrapElements.cshtml" />
     <Content Include="Views\Home\Alerts.cshtml" />
     <Content Include="Views\Home\ProgressBars.cshtml" />
+    <Content Include="Views\Home\GeneralForms.cshtml" />
+    <Content Include="Views\Home\AdvancedForms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
