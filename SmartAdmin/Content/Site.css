@@ -81,7 +81,9 @@ p {
     line-height: 1.8;
 }
 
-
+label {
+    font-weight: normal;
+}
 
 html {
     position: relative;
@@ -1880,6 +1882,7 @@ body {
     transition: border-color linear .25s;
     /*后台系统文本框不宜过高*/
     height: 31px;
+    line-height: 31px;
     font-size: 12px;
 }
 
@@ -2005,3 +2008,217 @@ body {
 /* ========================================================================
  * CHECKBOX
  * ======================================================================== */
+.ckbox, .rdio {
+    position: relative;
+    margin-top: 3px;
+}
+
+    .ckbox input[type=checkbox], .rdio input[type=radio] {
+        opacity: 0;
+    }
+
+    .ckbox label, .rdio label {
+        padding-left: 10px;
+        cursor: pointer;
+        margin-bottom: 7px !important;
+        vertical-align: middle;
+    }
+
+        .ckbox label:before, .rdio label:before {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            content: '';
+            display: inline-block;
+            border: 1px solid #ccc;
+            background: #fff;
+            transition: 0.25s ease-in-out;
+            outline: none !important;
+            border-radius: 2px;
+        }
+
+        /*icon*/
+        .ckbox label:after {
+            color: #555555;
+            display: inline-block;
+            font-size: 10px;
+            height: 20px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .rdio label:before, .rdio label:after {
+            border-radius: 50%;
+        }
+
+        .rdio label:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            display: inline-block;
+            font-size: 10px;
+            width: 10px;
+            height: 10px;
+        }
+
+.ckbox-default input[type=checkbox]:checked + label:before {
+}
+
+.ckbox-default input[type=radio]:checked + label:before {
+}
+
+.ckbox-success input[type=checkbox]:checked + label:before {
+    border-color: #81b71a;
+    background-color: #81b71a;
+}
+
+.ckbox-primary input[type=checkbox]:checked + label:before {
+    border-color: #00B1E1;
+    background-color: #00B1E1;
+}
+
+.ckbox-info input[type=checkbox]:checked + label:before {
+    border-color: #63D3E9;
+    background-color: #63D3E9;
+}
+
+.ckbox-warning input[type=checkbox]:checked + label:before {
+    border-color: #F6BB42;
+    background-color: #F6BB42;
+}
+
+.ckbox-danger input[type=checkbox]:checked + label:before {
+    border-color: #E9573F;
+    background-color: #E9573F;
+}
+
+.ckbox-lilac input[type=checkbox]:checked + label:before {
+    border-color: #906094;
+    background-color: #906094;
+}
+
+.ckbox-primary input[type=checkbox]:checked + label:before {
+    border-color: #00B1E1;
+    background-color: #00B1E1;
+}
+
+.ckbox-teal input[type=checkbox]:checked + label:before {
+    border-color: #37BC9B;
+    background-color: #37BC9B;
+}
+
+.ckbox-inverse input[type=checkbox]:checked + label:before {
+    border-color: #2A2A2A;
+    background-color: #2A2A2A;
+}
+
+.ckbox input[type=checkbox]:checked + label:after {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+}
+
+.ckbox-primary input[type="checkbox"]:checked + label:after,
+.ckbox-info input[type="checkbox"]:checked + label:after,
+.ckbox-inverse input[type="checkbox"]:checked + label:after,
+.ckbox-success input[type="checkbox"]:checked + label:after,
+.ckbox-danger input[type="checkbox"]:checked + label:after,
+.ckbox-warning input[type="checkbox"]:checked + label:after,
+.ckbox-lilac input[type="checkbox"]:checked + label:after,
+.ckbox-teal input[type="checkbox"]:checked + label:after {
+    color: #ffffff;
+}
+
+/*radio checked border colors*/
+.rdio input[type=radio]:checked + label:after {
+    content: "";
+    background-color: #555;
+}
+
+.ckbox-success input[type=radio]:checked + label:before {
+    border-color: #81b71a;
+}
+
+.ckbox-primary input[type=radio]:checked + label:before {
+    border-color: #00B1E1;
+}
+
+.ckbox-info input[type=radio]:checked + label:before {
+    border-color: #63D3E9;
+}
+
+.ckbox-warning input[type=radio]:checked + label:before {
+    border-color: #F6BB42;
+}
+
+.ckbox-danger input[type=radio]:checked + label:before {
+    border-color: #E9573F;
+}
+
+.ckbox-lilac input[type=radio]:checked + label:before {
+    border-color: #906094;
+}
+
+.ckbox-primary input[type=radio]:checked + label:before {
+    border-color: #00B1E1;
+}
+
+.ckbox-teal input[type=radio]:checked + label:before {
+    border-color: #37BC9B;
+}
+
+.ckbox-inverse input[type=radio]:checked + label:before {
+    border-color: #2A2A2A;
+}
+
+/*radio checked background colors*/
+.ckbox-success input[type=radio]:checked + label:after {
+    background-color: #81b71a;
+}
+
+.ckbox-primary input[type=radio]:checked + label:after {
+    background-color: #00B1E1;
+}
+
+.ckbox-info input[type=radio]:checked + label:after {
+    background-color: #63D3E9;
+}
+
+.ckbox-warning input[type=radio]:checked + label:after {
+    background-color: #F6BB42;
+}
+
+.ckbox-danger input[type=radio]:checked + label:after {
+    background-color: #E9573F;
+}
+
+.ckbox-lilac input[type=radio]:checked + label:after {
+    background-color: #906094;
+}
+
+.ckbox-teal input[type=radio]:checked + label:after {
+    background-color: #37BC9B;
+}
+
+.ckbox-inverse input[type=radio]:checked + label:after {
+    background-color: #2A2A2A;
+}
+
+/*disabled*/
+input[type=checkbox]:disabled + label, input[type=radio]:disabled + label {
+    color: #999;
+    cursor: not-allowed;
+}
+
+input[type=checkbox][disabled]:checked + label:before,
+input[type=radio][disabled]:checked + label:before,
+input[type=radio][disabled]:checked + label:after {
+    opacity: .5;
+}
