@@ -19,95 +19,239 @@
 </div>
 <!--begin form elements-->
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <div class="panel panel-blank">
             <div class="panel-heading">
-                <h3 class="panel-title">输入框类型</h3>
+                <h3 class="panel-title">Vertical form</h3>
             </div>
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">用户名</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" value="admin" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">邮箱</label>
-                                <div class="col-md-10">
-                                    <input type="email" class="form-control" placeholder="请输入电子邮箱地址" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">密码</label>
-                                <div class="col-md-10">
-                                    <input type="password" class="form-control" value="passwordDemo" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">工作经历</label>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" rows="5"></textarea>
-                                </div>
-                            </div>
-                        </form>
+                <form action="#">
+                    <div class="form-group">
+                        <label class="control-label">用户名</label>
+                        <input class="form-control" type="text" />
                     </div>
-                    <div class="col-md-6">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">只读</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" readonly="readonly" value="只读输入框">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">禁用</label>
-                                <div class="col-md-10">
-                                    <input type="email" class="form-control" disabled="disabled" value="我被禁用了..." />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">文本显示</label>
-                                <div class="col-md-10">
-                                    <p class="form-control-static">email@example.com</p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">帮助文本</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" placeholder="下发显示帮助文本">
-                                    <span class="help-block"><small>请输入2sin60 * (21 x 3 + 5 * 60 + 7^4) / 66 的值(保留2位小数).</small></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">下拉框</label>
-                                <div class="col-md-10">
-                                    <select class="form-control">
-                                        <option>北京市</option>
-                                        <option>上海市</option>
-                                        <option>深圳市</option>
-                                        <option>武汉市</option>
-                                        <option>杭州市</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">多选框</label>
-                                <div class="col-md-10">
-                                    <select multiple="multiple" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="form-group">
+                        <label class="control-label">密码</label>
+                        <input class="form-control" type="password" />
                     </div>
-                </div>
+                    <div class="form-group has-feedback">
+                        <label class="control-label">邮箱</label>
+                        <i class="fa fa-envelope form-control-feedback form-control-feedback-left"></i>
+                        <input class="form-control" type="email" value="example@163.com" />
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="control-label">微信号</label>
+                        <i class="fa fa-weixin form-control-feedback"></i>
+                        <input class="form-control" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">交友宣言</label>
+                        <textarea class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">手机号码</label>
+                        <input class="form-control" type="text" placeholder="18812345678" />
+                        <span class="help-block">偷偷的告诉我手机号，我们不会让别人知道的。</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">静态文本</label>
+                        <p class="form-control-static">这是一个静态文本</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">只读</label>
+                        <input class="form-control" type="text" readonly="readonly" value="只读输入框" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">禁用</label>
+                        <input class="form-control" type="text" disabled="disabled" value="我被禁用了..." />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">关注领域</label>
+                        <div>
+                            <div class="ckbox ckbox-primary checkbox-inline">
+                                <input id="checkbox-form-unchecked1" type="checkbox">
+                                <label for="checkbox-form-unchecked1">游戏</label>
+                            </div>
+                            <div class="ckbox ckbox-primary checkbox-inline">
+                                <input id="checkbox-form-checked1" checked="checked" type="checkbox">
+                                <label for="checkbox-form-checked1">娱乐</label>
+                            </div>
+                            <div class="ckbox ckbox-primary checkbox-inline">
+                                <input id="checkbox-form-unchecked-disabled1" disabled="disabled" type="checkbox">
+                                <label for="checkbox-form-unchecked-disabled1">政治</label>
+                            </div>
+                            <div class="ckbox ckbox-primary checkbox-inline">
+                                <input id="checkbox-form-unchecked-disabled2" disabled="disabled" type="checkbox" checked="checked">
+                                <label for="checkbox-form-unchecked-disabled2">程序设计</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">性别</label>
+                        <div class="rdio ckbox-default">
+                            <input id="radio-form-radio1" name="radio-form1" type="radio">
+                            <label for="radio-form-radio1">男</label>
+                        </div>
+                        <div class="rdio ckbox-default">
+                            <input id="radio-form-radio2" name="radio-form1" checked="checked" type="radio">
+                            <label for="radio-form-radio2">女</label>
+                        </div>
+                        <div class="rdio ckbox-default">
+                            <input id="radio-form-radio3" name="radio-form1" disabled="disabled" type="radio">
+                            <label for="radio-form-radio2">不明</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">所在城市</label>
+                        <select class="form-control">
+                            <option>北京市</option>
+                            <option>上海市</option>
+                            <option>深圳市</option>
+                            <option>武汉市</option>
+                            <option>杭州市</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">多选框</label>
+                        <select multiple="multiple" class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">Horizontal form</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" action="#">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">用户名</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">密码</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">邮箱</label>
+                        <div class="col-md-10">
+                            <i class="fa fa-envelope form-control-feedback form-control-feedback-left"></i>
+                            <input class="form-control" type="email" value="example@163.com" />
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">微信号</label>
+                        <div class="col-md-10">
+                            <i class="fa fa-weixin form-control-feedback"></i>
+                            <input class="form-control" type="email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">交友宣言</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">手机号码</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" placeholder="18812345678" />
+                            <span class="help-block">偷偷的告诉我手机号，我们不会让别人知道的。</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">静态文本</label>
+                        <div class="col-md-10">
+                            <p class="form-control-static">这是一个静态文本</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">只读</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" readonly="readonly" value="只读输入框" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">禁用</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" disabled="disabled" value="我被禁用了..." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">关注领域</label>
+                        <div class="col-md-10">
+                            <div class="ckbox ckbox-primary">
+                                <input id="checkbox-form2-unchecked1" type="checkbox">
+                                <label for="checkbox-form2-unchecked1">游戏</label>
+                            </div>
+                            <div class="ckbox ckbox-primary">
+                                <input id="checkbox-form2-checked1" checked="checked" type="checkbox">
+                                <label for="checkbox-form2-checked1">娱乐</label>
+                            </div>
+                            <div class="ckbox ckbox-primary">
+                                <input id="checkbox-form2-unchecked-disabled1" disabled="disabled" type="checkbox">
+                                <label for="checkbox-form2-unchecked-disabled1">政治</label>
+                            </div>
+                            <div class="ckbox ckbox-primary">
+                                <input id="checkbox-form2-unchecked-disabled2" disabled="disabled" type="checkbox" checked="checked">
+                                <label for="checkbox-form2-unchecked-disabled2">程序设计</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">性别</label>
+                        <div class="col-md-10">
+                            <div class="rdio ckbox-default">
+                                <input id="radio-form2-radio1" name="radio-form2" type="radio">
+                                <label for="radio-form2-radio1">男</label>
+                            </div>
+                            <div class="rdio ckbox-default">
+                                <input id="radio-form2-radio2" name="radio-form2" checked="checked" type="radio">
+                                <label for="radio-form2-radio2">女</label>
+                            </div>
+                            <div class="rdio ckbox-default">
+                                <input id="radio-form2-radio3" name="radio-form2" disabled="disabled" type="radio">
+                                <label for="radio-form2-radio2">不明</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">所在城市</label>
+                        <div class="col-md-10">
+                            <select class="form-control">
+                                <option>北京市</option>
+                                <option>上海市</option>
+                                <option>深圳市</option>
+                                <option>武汉市</option>
+                                <option>杭州市</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">多选框</label>
+                        <div class="col-md-10">
+                            <select multiple="multiple" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -375,6 +519,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <div class="ckbox ckbox-primary checkbox-inline">
+                            <input id="checkbox-enhanced2-unchecked1" type="checkbox">
+                            <label for="checkbox-enhanced2-unchecked1">一</label>
+                        </div>
+                        <div class="ckbox ckbox-primary checkbox-inline">
+                            <input id="checkbox-enhanced2-checked1" checked="checked" type="checkbox">
+                            <label for="checkbox-enhanced2-checked1">二</label>
+                        </div>
+                        <div class="ckbox ckbox-primary checkbox-inline">
+                            <input id="checkbox-enhanced3-unchecked-disabled1" type="checkbox">
+                            <label for="checkbox-enhanced3-unchecked-disabled1">三</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -452,6 +612,22 @@
                         <div class="rdio ckbox-primary">
                             <input id="radio-enhanced-checked-disabled1" name="radio-enhanced-unchecked2" checked="checked" disabled="disabled" type="radio">
                             <label for="radio-enhanced-checked-disabled1">Disabled Checked</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <div class="rdio ckbox-primary checkbox-inline">
+                            <input id="radio-enhanced2-unchecked1" name="radio-enhanced2-unchecked" type="radio">
+                            <label for="radio-enhanced2-unchecked1">one</label>
+                        </div>
+                        <div class="rdio ckbox-primary checkbox-inline">
+                            <input id="radio-enhanced2-checked1" name="radio-enhanced2-unchecked" checked="checked" type="radio">
+                            <label for="radio-enhanced2-checked1">two</label>
+                        </div>
+                        <div class="rdio ckbox-primary checkbox-inline">
+                            <input id="radio-enhanced2-unchecked-disabled1" name="radio-enhanced2-unchecked" type="radio">
+                            <label for="radio-enhanced2-unchecked-disabled1">three</label>
                         </div>
                     </div>
                 </div>

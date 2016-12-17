@@ -896,7 +896,7 @@ body {
 }
 
 .panel-blank > .panel-heading {
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid #ddd;
 }
 
 .drop-primary,
@@ -1153,18 +1153,19 @@ body {
     }
 
 .btn-success {
-    background-color: #449d44;
-    border-color: #398c39;
+    /*#81b71a #7eb319  #6b9816 #91cd1d*/
+    background-color: #81b71a;
+    border-color: #74a517;
 }
 
     .btn-success:hover, .btn-success:focus, .btn-success.focus {
-        background-color: #328732;
-        border-color: #247724;
+        background-color: #6b9816;
+        border-color: #5c8313;
     }
 
     .btn-success:active, .btn-success.active, .btn-success:active:focus {
-        background-color: #2c792c;
-        border-color: #1b611b;
+        background-color: #5b8014;
+        border-color: #4e6d14;
     }
 
     .btn-success.disabled:hover,
@@ -1875,6 +1876,74 @@ body {
 /* ========================================================================
  * FORM ELEMENTS
  * ======================================================================== */
+.form-horizontal .form-group {
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.form-inline .form-group {
+    margin-right: 10px;
+}
+
+.form-body {
+    padding: 10px 15px;
+}
+
+.form-footer {
+    padding: 10px 15px;
+    background-color: #F5F5F5;
+    border-top: 1px solid #ddd;
+}
+
+    .form-footer [class*="col-"] .btn {
+        margin-left: 5px;
+    }
+
+.form-bordered .form-group {
+    padding: 15px 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid #ddd;
+}
+
+    .form-bordered .form-group:first-child {
+        border-top: none;
+    }
+
+.form-bordered.form-condensed .form-group {
+    padding: 10px 0px;
+}
+
+.form-bordered .form-body {
+    padding: 0px;
+}
+
+.form-bordered .form-footer [class*="col-"] .btn {
+    margin-left: 0px;
+}
+
+.form-striped .form-group:nth-child(2n+1) {
+    background-color: #f1f1f1;
+}
+
+form .form-group.form-group-divider {
+    background-color: #EEEEEE;
+    padding: 0px !important;
+    margin-bottom: 0px;
+}
+
+    form .form-group.form-group-divider .form-inner {
+        border-left: 5px solid #00B1E1;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+.form-condensed .form-group.form-group-divider .form-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .form-control {
     box-shadow: none !important;
     border: 1px solid #ddd;
@@ -1894,9 +1963,29 @@ body {
         border: 1px solid #00b1e1;
     }
 
+.has-feedback .form-control {
+    padding-right: 35px;
+}
+
 .form-control-feedback {
     height: 31px;
+    width: 34px;
     line-height: 31px;
+    font-size: 14px;
+    color: #999;
+}
+
+.form-control-feedback-left {
+    left: 0;
+}
+
+    .form-control-feedback-left ~ .form-control {
+        padding-left: 35px;
+        padding-right: 12px;
+    }
+
+.has-feedback label ~ .form-control-feedback {
+    top: 22px;
 }
 
 .input-sm {
@@ -1906,7 +1995,6 @@ body {
 }
 
     .input-sm + .form-control-feedback, .input-group-sm + .form-control-feedback, .form-group-sm .form-control + .form-control-feedback {
-        width: 29px;
         height: 29px;
         line-height: 29px;
     }
@@ -1918,10 +2006,14 @@ body {
 }
 
     .input-lg + .form-control-feedback, .input-group-lg + .form-control-feedback, .form-group-lg .form-control + .form-control-feedback {
-        width: 38px;
         height: 38px;
         line-height: 38px;
     }
+
+/*多行行高重置为默认值*/
+textarea.form-control {
+    line-height: 1.42857143;
+}
 
 .input-group .form-control:focus {
     z-index: 2;
@@ -1936,8 +2028,17 @@ body {
     border-radius: 2px;
 }
 
+    .input-group-addon i {
+        /*font-size: 14px;*/
+    }
+
 .form-horizontal .has-feedback .form-control-feedback {
     right: 10px;
+}
+
+.form-horizontal .form-control-feedback-left {
+    right: auto !important;
+    left: auto !important;
 }
 
 .input-group-btn + .form-control {
@@ -2004,6 +2105,12 @@ body {
     color: #E9573F;
 }
 
+.form-control-static {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 31px;
+}
+
 
 /* ========================================================================
  * CHECKBOX
@@ -2013,12 +2120,16 @@ body {
     margin-top: 3px;
 }
 
+    .rdio.checkbox-inline {
+        padding-left: 0;
+    }
+
     .ckbox input[type=checkbox], .rdio input[type=radio] {
         opacity: 0;
     }
 
     .ckbox label, .rdio label {
-        padding-left: 10px;
+        padding-left: 10px !important;
         cursor: pointer;
         margin-bottom: 7px !important;
         vertical-align: middle;
@@ -2068,6 +2179,16 @@ body {
             width: 10px;
             height: 10px;
         }
+
+.form-horizontal .rdio.checkbox-inline,
+.form-horizontal .ckbox.checkbox-inline {
+    padding-top: 2px;
+    margin-top: 6px;
+}
+
+.form-horizontal .rdio.checkbox-inline {
+    padding-top: 0px;
+}
 
 .ckbox-default input[type=checkbox]:checked + label:before {
 }
@@ -2140,6 +2261,11 @@ body {
 .rdio input[type=radio]:checked + label:after {
     content: "";
     background-color: #555;
+}
+
+.rdio input[type=radio]:checked + label:before {
+    border-width: 2px;
+    transition: border-color 0.25s ease-in-out;
 }
 
 .ckbox-success input[type=radio]:checked + label:before {
