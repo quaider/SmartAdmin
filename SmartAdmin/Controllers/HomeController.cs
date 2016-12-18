@@ -78,6 +78,11 @@ namespace SmartAdmin.Controllers
             return PartialView();
         }
 
+        public ActionResult FormValidation()
+        {
+            return PartialView();
+        }
+
         public ActionResult AdvancedForms()
         {
             return PartialView();

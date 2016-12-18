@@ -123,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,10 +218,10 @@
     <Content Include="Views\Home\GeneralForms.cshtml" />
     <Content Include="Views\Home\AdvancedForms.cshtml" />
     <Content Include="Views\Home\FormLayout.cshtml" />
+    <Content Include="Views\Home\FormValidation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
