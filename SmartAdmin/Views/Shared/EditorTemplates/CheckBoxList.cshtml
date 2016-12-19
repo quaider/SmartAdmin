@@ -1,0 +1,26 @@
+﻿@{
+    var required = false;
+    object validationMessage = string.Empty;
+    var validationAttributes = Html.GetUnobtrusiveValidationAttributes("");
+    if (validationAttributes.ContainsKey("data-val") && validationAttributes.ContainsKey("data-val-required"))
+    {
+        required = true;
+        if (!validationAttributes.TryGetValue("data-val-required", out validationMessage))
+        {
+            validationMessage = "This field is required.";
+        }
+        validationAttributes.Add("required", "required");
+    }
+}
+<div class="ckbox ckbox-lilac checkbox-inline">
+    <input id="ck1" value="1" name="MinCheck" type="checkbox">
+    <label for="ck1">Check one</label>
+</div>
+<div class="ckbox ckbox-lilac checkbox-inline">
+    <input id="ck2" value="2" name="MinCheck" type="checkbox">
+    <label for="ck2">Check two</label>
+</div>
+<div class="ckbox ckbox-lilac checkbox-inline">
+    <input id="ck3" value="3" name="MinCheck" type="checkbox">
+    <label for="ck3">Check three</label>
+</div>

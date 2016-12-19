@@ -40,6 +40,16 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="control-label col-sm-3" for="Password">
+                            <span class="text-danger">*</span>
+                            Password
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(f => f.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(f => f.Password)
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label col-sm-3" for="EmailAddress">
                             <span class="text-danger">*</span>
                             Email Address
@@ -47,6 +57,60 @@
                         <div class="col-sm-7">
                             @Html.TextBoxFor(f => f.EmailAddress, new { @class = "form-control" })
                             @Html.ValidationMessageFor(f => f.EmailAddress)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="MaxLength">
+                            MaxLength
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(f => f.MaxLength, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(f => f.MaxLength)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="MinLength">
+                            MinLength
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(f => f.MinLength, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(f => f.MinLength)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="RangeLength">
+                            Range Length
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(f => f.RangeLength, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(f => f.RangeLength)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">
+                            <span class="text-danger">*</span>
+                            Min check
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.EditorFor(f => f.MinCheck, "CheckBoxList", new
+                            {
+                                TagName = "MinCheck",
+                                CheckBoxItems = ViewBag.Course,
+                                Numbers = 3
+                            })
+                            <span class="field-validation-error" data-valmsg-for="MinCheck" data-valmsg-replace="true">
+                                <span for="MinCheck" class="">后续再提供CheckboxList 及 CheckBox Boolean扩展.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="Remark">
+                            <span class="text-danger">*</span>
+                            Remark
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.TextAreaFor(f => f.Remark, new { @class = "form-control", rows = 3 })
+                            @Html.ValidationMessageFor(f => f.Remark)
                         </div>
                     </div>
                     <div class="form-group">
@@ -63,5 +127,49 @@
             </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">Html静态Attribute & Default form</h3>
+            </div>
+            <div class="panel-body">
+                <form action="/Home/FormValidation" id="form2">
+                    <div class="form-group">
+                        <label class="control-label">
+                            <span class="text-danger">*</span>
+                            User name
+                        </label>
+                        <input type="text" name="UserName1" class="form-control" data-val="true" data-val-required="This value is required." />
+                        <span data-valmsg-for="UserName1" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            MaxLength
+                        </label>
+                        <input class="form-control" data-val="true" data-val-maxlength="Less than 10 words." data-val-maxlength-max="10" id="MaxLength1" name="MaxLength1" type="text">
+                        <span data-valmsg-for="MaxLength1" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            MinLength
+                        </label>
+                        <input class="form-control" data-val="true" data-val-minlength="More than 5 words." data-val-minlength-min="5" id="MinLength1" name="MinLength1" type="text">
+                        <span data-valmsg-for="MinLength1" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <button type="submit" class="btn btn-primary">
+                                Register
+                            </button>
+                            <button type="reset" class="btn btn-default">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
