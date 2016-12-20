@@ -2,6 +2,9 @@
 
 namespace SmartAdmin.Models
 {
+    /// <summary>
+    /// MVC model validations
+    /// </summary>
     public class User
     {
         [Required(ErrorMessage = "This value is required.")]
@@ -14,6 +17,10 @@ namespace SmartAdmin.Models
 
         [Required(ErrorMessage = "This value is required.")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "This value should be the same.")]
+        [Compare("Password", ErrorMessage = "This value should be the same.")]
+        public string ComfirmPassword { get; set; }
 
         [MaxLength(10, ErrorMessage = "Less than 10 words.")]
         public string MaxLength { get; set; }
@@ -29,5 +36,9 @@ namespace SmartAdmin.Models
 
         [Required(ErrorMessage = "You must select at least 1 items.")]
         public int? MinCheck { get; set; }
+
+        [Range(5, 999, ErrorMessage = "This value should be between 5 and 999.")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "This value should be a number.")]
+        public int? RangeValue { get; set; }
     }
 }

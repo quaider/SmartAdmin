@@ -45,8 +45,18 @@
                             Password
                         </label>
                         <div class="col-sm-7">
-                            @Html.TextBoxFor(f => f.Password, new { @class = "form-control" })
+                            @Html.PasswordFor(f => f.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(f => f.Password)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="ComfirmPassword">
+                            <span class="text-danger">*</span>
+                            Confirm Password
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.PasswordFor(f => f.ComfirmPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(f => f.ComfirmPassword)
                         </div>
                     </div>
                     <div class="form-group">
@@ -55,7 +65,7 @@
                             Email Address
                         </label>
                         <div class="col-sm-7">
-                            @Html.TextBoxFor(f => f.EmailAddress, new { @class = "form-control" })
+                            @Html.TextBoxFor(f => f.EmailAddress, new { @class = "form-control", placeholder = "Enter a valid e-mail" })
                             @Html.ValidationMessageFor(f => f.EmailAddress)
                         </div>
                     </div>
@@ -64,7 +74,7 @@
                             MaxLength
                         </label>
                         <div class="col-sm-7">
-                            @Html.TextBoxFor(f => f.MaxLength, new { @class = "form-control" })
+                            @Html.TextBoxFor(f => f.MaxLength, new { @class = "form-control", placeholder = "Max 10 chars" })
                             @Html.ValidationMessageFor(f => f.MaxLength)
                         </div>
                     </div>
@@ -73,7 +83,7 @@
                             MinLength
                         </label>
                         <div class="col-sm-7">
-                            @Html.TextBoxFor(f => f.MinLength, new { @class = "form-control" })
+                            @Html.TextBoxFor(f => f.MinLength, new { @class = "form-control", placeholder = "Min 5 chare" })
                             @Html.ValidationMessageFor(f => f.MinLength)
                         </div>
                     </div>
@@ -139,22 +149,44 @@
                             <span class="text-danger">*</span>
                             User name
                         </label>
-                        <input type="text" name="UserName1" class="form-control" data-val="true" data-val-required="This value is required." />
+                        <input type="text" name="UserName1" class="form-control" placeholder="Type something"
+                               data-val="true" data-val-required="This value is required." />
                         <span data-valmsg-for="UserName1" data-valmsg-replace="true"></span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             MaxLength
                         </label>
-                        <input class="form-control" data-val="true" data-val-maxlength="Less than 10 words." data-val-maxlength-max="10" id="MaxLength1" name="MaxLength1" type="text">
+                        <input class="form-control" data-val="true" placeholder="Max 10 chars"
+                               data-val-maxlength="Less than 10 chars." data-val-maxlength-max="10" id="MaxLength1" name="MaxLength1" type="text">
                         <span data-valmsg-for="MaxLength1" data-valmsg-replace="true"></span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             MinLength
                         </label>
-                        <input class="form-control" data-val="true" data-val-minlength="More than 5 words." data-val-minlength-min="5" id="MinLength1" name="MinLength1" type="text">
+                        <input class="form-control" data-val="true" placeholder="Min 5 chars"
+                               data-val-minlength="More than 5 words." data-val-minlength-min="5" id="MinLength1" name="MinLength1" type="text">
                         <span data-valmsg-for="MinLength1" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            City
+                        </label>
+                        <select class="form-control" data-val="true" data-val-required="This value is required." name="City" id="City">
+                            <option value="">please select</option>
+                            <option value="1">北京</option>
+                            <option value="2">上海</option>
+                            <option value="3">深圳</option>
+                        </select>
+                        <span data-valmsg-for="City" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="RangeValue">
+                            Range Value
+                        </label>
+                        @Html.TextBoxFor(f => f.RangeValue, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(f => f.RangeValue)
                     </div>
                     <div class="form-group">
                         <div class="col-sm-7 col-sm-offset-3">
@@ -171,5 +203,28 @@
         </div>
     </div>
 
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">自定义验证</h3>
+            </div>
+            <div class="panel-body">
+                <form action="/Home/FormValidation" id="form3">
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <button type="submit" class="btn btn-primary">
+                                Validate
+                            </button>
+                            <button type="reset" class="btn btn-default">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
