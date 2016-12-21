@@ -1,0 +1,86 @@
+﻿body .layui-layer-setwin {
+    top: 14px;
+    right: 12px;
+}
+
+    body .layui-layer-setwin a.layui-layer-close1 {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        background: none;
+        color: #6d7686;
+    }
+
+        body .layui-layer-setwin a.layui-layer-close1:hover {
+            color: #373f4e;
+            opacity: 1;
+        }
+
+        body .layui-layer-setwin a.layui-layer-close1:before {
+            content: "\f00d";
+        }
+
+body .smart .layui-layer-title {
+    background: #f1f1f1;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+body .smart .layui-layer-btn {
+    background: #f1f1f1;
+    border-top: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+    body .smart .layui-layer-btn a {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        transition: all 0.25s;
+        border-radius: 2px;
+        font-size: 12px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        vertical-align: middle;
+    }
+
+        body .smart .layui-layer-btn a:hover {
+            opacity: 1;
+        }
+
+        body .smart .layui-layer-btn a:active {
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+
+        body .smart .layui-layer-btn a:hover, body .smart .layui-layer-btn a:focus {
+            color: #333;
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+
+        body .smart .layui-layer-btn a:active {
+            color: #333;
+            background-color: #d4d4d4;
+            border-color: #8c8c8c;
+        }
+
+        body .smart .layui-layer-btn a.layui-layer-btn0 {
+            background-color: #81b71a;
+            border-color: #74a517;
+            color: #fff;
+        }
+
+            body .smart .layui-layer-btn a.layui-layer-btn0:hover, body .smart .layui-layer-btn .layui-layer-btn0:focus {
+                background-color: #6b9816;
+                border-color: #5c8313;
+                color: #fff;
+            }
+
+            body .smart .layui-layer-btn a.layui-layer-btn0:active {
+                background-color: #5b8014;
+                border-color: #4e6d14;
+                color: #fff;
+            }

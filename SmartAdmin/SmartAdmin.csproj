@@ -149,6 +149,7 @@
     <Content Include="Content\layer\skin\default\loading-0.gif" />
     <Content Include="Content\layer\skin\default\loading-1.gif" />
     <Content Include="Content\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\layer\skin\smart\style.css" />
     <Content Include="Content\themes\dark\theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />

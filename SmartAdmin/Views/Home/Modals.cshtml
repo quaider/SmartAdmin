@@ -43,6 +43,11 @@
 </div>
 <script>
     $(function () {
+        layer.config({
+            extend: 'smart/style.css',
+            skin: 'smart'
+        })
+
         $("#basicAlert").bind("click", function () {
             layer.alert('为你弹奏肖邦的夜曲');
         });
