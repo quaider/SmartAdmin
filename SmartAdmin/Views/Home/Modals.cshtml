@@ -1,7 +1,7 @@
 ﻿<div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title pull-left">Modals</h4>
+            <h4 class="page-title pull-left">Layer Modals</h4>
             <ol class="breadcrumb pull-right">
                 <li>
                     <a href="javascript:void(0)">Smart Admin</a>
@@ -17,3 +17,171 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    弹出层(更多示例请参考 <a href="http://layer.layui.com/" target="_blank"><code>Layer官网</code></a> 及
+                    <a href="http://www.layui.com/doc/modules/layer.html" target="_blank"><code>Layer开发文档</code> )</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <button class="btn btn-default" id="basicAlert">基本弹窗</button>
+                <button class="btn btn-default" id="confirmAlert">询问层</button>
+                <button class="btn btn-default" id="tipsAlert">提示层</button>
+                <button class="btn btn-default" id="iframeAlert">iframe层</button>
+                <button class="btn btn-default" id="iframeWin">iframe窗</button>
+                <button class="btn btn-default" id="loadingDefault">Loading</button>
+                <button class="btn btn-default" id="MinMax">最大最下化</button>
+                <button class="btn btn-default" id="FullScreenInit">弹出即全屏</button>
+                <button class="btn btn-default" id="MultiLayer">多层弹窗</button>
+                <button class="btn btn-default" id="cus01">自定义1</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#basicAlert").bind("click", function () {
+            layer.alert('为你弹奏肖邦的夜曲');
+        });
+
+        $("#confirmAlert").bind("click", function () {
+            layer.confirm('Layer弹窗好用吗?', {
+                btn: ['好用', '不好用'] //按钮
+            }, function () {
+                layer.msg('是的, 感觉很好用!', { icon: 1 });
+            }, function () {
+                layer.msg('不管好不好用，它就在那里！');
+            });
+        });
+
+        $("#tipsAlert").bind("click", function () {
+            layer.msg('拦路雨偏似雪花，饮泣的你冻吗，这风褛我给你磨到有襟花.', {
+                time: 5000
+            });
+        });
+
+        $("#iframeAlert").bind("click", function () {
+            layer.open({
+                type: 2, //表示是iframe层
+                title: "有事没事找度娘",
+                shadeClose: false,
+                shade: .3, //遮罩透明度
+                area: ['60%', '80%'],
+                content: 'http://www.baidu.com/' //iframe的url
+            });
+        });
+
+        $("#iframeWin").bind("click", function () {
+            layer.open({
+                type: 2,
+                title: false,
+                closeBtn: 0, //不显示关闭按钮
+                shade: [0],
+                area: ['30%', '300px'],
+                offset: 'rb', //右下角弹出
+                time: 2000, //2秒后自动关闭,不给就不关闭
+                anim: 2,
+                scrollbar: false,//去掉浏览器滚动条
+                content: ['http://www.baidu.com', 'no'], //iframe的url，no代表不显示滚动条
+                end: function () {
+
+                }
+            });
+        });
+
+        $("#loadingDefault").bind("click", function () {
+            layer.load(0);
+
+            setTimeout(function () {
+                layer.closeAll('loading');
+            }, 2000);
+
+            setTimeout(function () {
+                layer.load(1);
+            }, 2100);
+
+            setTimeout(function () {
+                layer.closeAll('loading');
+            }, 4100);
+
+            setTimeout(function () {
+                layer.load(2);
+            }, 4100);
+
+            setTimeout(function () {
+                layer.closeAll('loading');
+            }, 6100);
+        });
+
+        $("#MinMax").bind("click", function () {
+            layer.open({
+                type: 1,
+                title: '富士山下',
+                maxmin: true, //开启最大化最小化按钮
+                content: "<p style='padding:20px;'>拦路雨偏似雪花，饮泣的你冻吗，这风褛我给你磨到有襟花</p>",
+                btn: ['Yes', 'No'] //按钮
+            });
+        });
+
+        $("#FullScreenInit").bind("click", function () {
+            var index = layer.open({
+                type: 2,
+                title: '百度',
+                maxmin: true, //开启最大化最小化按钮
+                content: "http://www.baidu.com"
+            });
+
+            layer.full(index);
+        });
+
+        $("#MultiLayer").bind("click", function () {
+            var that = this;
+            layer.open({
+                type: 1, //此处以iframe举例
+                title: '当你选择该窗体时，即会在最顶端',
+                area: ['390px', '330px'],
+                shade: 0.1,
+                offset: [
+                    //为了演示，随机坐标
+                    Math.random() * ($(window).height() - 300), Math.random() * ($(window).width() - 390)
+                ],
+                maxmin: true,
+                content: "<p style='padding:20px;'>拦路雨偏似雪花，饮泣的你冻吗，这风褛我给你磨到有襟花</p>",
+                btn: ['继续弹出', '全部关闭'], //只是为了演示
+                yes: function () {
+                    $(that).click(); //此处只是为了演示，实际使用可以剔除
+                },
+                btn2: function () {
+                    layer.closeAll();
+                },
+                zIndex: layer.zIndex, //重点1
+                success: function (layero) {
+                    layer.setTop(layero); //重点2
+                }
+            });
+        });
+
+        $("#cus01").bind("click", function () {
+            //示范一个公告层
+            layer.open({
+                type: 1,
+                title: false, //不显示标题栏
+                closeBtn: false,
+                area: '300px;',
+                shade: 0.8,
+                id: 'LAY_layuipro', //设定一个id，防止重复弹出
+                resize: false,
+                btn: ['火速围观', '残忍拒绝'],
+                btnAlign: 'c',
+                moveType: 1, //拖拽模式，0或者1
+                content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>',
+                success: function (layero) {
+
+                }
+            });
+        });
+    })
+</script>
