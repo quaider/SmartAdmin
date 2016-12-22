@@ -234,6 +234,7 @@
     <Content Include="Views\Home\FormLayout.cshtml" />
     <Content Include="Views\Home\FormValidation.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CheckBoxList.cshtml" />
+    <Content Include="Views\Home\SimpleTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
