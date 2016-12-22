@@ -1,9 +1,21 @@
-﻿body .layui-layer-setwin {
+﻿body .layui-layer {
+    box-shadow: 1px 1px 25px rgba(0,0,0,.18);
+}
+
+body .layui-layer-border {
+    box-shadow: 1px 1px 5px rgba(0,0,0,.18);
+}
+
+body .layui-layer-loading {
+    box-shadow: none;
+}
+
+body .layui-layer-setwin {
     top: 14px;
     right: 12px;
 }
 
-    body .layui-layer-setwin a.layui-layer-close1 {
+    body .layui-layer-setwin a {
         display: inline-block;
         font: normal normal normal 14px/1 FontAwesome;
         text-rendering: auto;
@@ -12,13 +24,29 @@
         color: #6d7686;
     }
 
-        body .layui-layer-setwin a.layui-layer-close1:hover {
+        body .layui-layer-setwin a:hover, body .layui-layer-setwin a.layui-layer-close1:hover {
             color: #373f4e;
             opacity: 1;
         }
 
         body .layui-layer-setwin a.layui-layer-close1:before {
             content: "\f00d";
+        }
+
+        body .layui-layer-setwin a.layui-layer-max:before {
+            content: "\f2d0";
+        }
+
+        body .layui-layer-setwin a.layui-layer-maxmin:before {
+            content: "\f2d2";
+        }
+
+        /*不需要最小化功能*/
+        body .layui-layer-setwin a.layui-layer-min {
+            display: none !important;
+            opacity: 0;
+            width: 0;
+            height: 0;
         }
 
 body .smart .layui-layer-title {

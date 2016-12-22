@@ -41,12 +41,26 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    其他示例
+                </h3>
+            </div>
+            <div class="panel-body">
+                <button class="btn btn-default" id="photoLayer">相册</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(function () {
         layer.config({
             extend: 'smart/style.css',
             skin: 'smart'
-        })
+        });
 
         $("#basicAlert").bind("click", function () {
             layer.alert('为你弹奏肖邦的夜曲');
@@ -182,10 +196,48 @@
                 btn: ['火速围观', '残忍拒绝'],
                 btnAlign: 'c',
                 moveType: 1, //拖拽模式，0或者1
-                content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>',
+                content: '<div style="padding: 50px; line-height: 22px; font-size:14px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>',
                 success: function (layero) {
 
                 }
+            });
+        });
+
+        $("#photoLayer").bind("click", function () {
+            layer.photos({
+                photos: {
+                    "title": "Demo Album", //相册标题
+                    "id": 123, //相册id
+                    "start": 2, //初始显示的图片序号，默认0
+                    "data": [
+                        //相册包含的图片，数组格式
+                        {
+                            "alt": "一\"头\"犀利的单身汪",
+                            "pid": 666, //图片id
+                            "src": "Images/demo/demo1.png", //原图地址
+                            "thumb": "" //缩略图地址
+                        },
+                        {
+                            "alt": "一脸懵逼的喵星人，喵~~",
+                            "pid": 667, //图片id
+                            "src": "Images/demo/demo2.png",
+                            "thumb": ""
+                        },
+                        {
+                            "alt": "云想衣裳花想容，春风拂槛露华浓",
+                            "pid": 668, //图片id
+                            "src": "Images/demo/demo3.png",
+                            "thumb": ""
+                        },
+                        {
+                            "alt": "大概这就是所谓的萌了吧！",
+                            "pid": 669, //图片id
+                            "src": "Images/demo/demo4.png",
+                            "thumb": ""
+                        }
+                    ]
+                }
+                //,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
             });
         });
     })

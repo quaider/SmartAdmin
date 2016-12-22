@@ -179,6 +179,10 @@
     <Content Include="fonts\MaterialIcons-Regular.woff2" />
     <Content Include="fonts\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\demo\demo1.png" />
+    <Content Include="Images\demo\demo2.png" />
+    <Content Include="Images\demo\demo3.png" />
+    <Content Include="Images\demo\demo4.png" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

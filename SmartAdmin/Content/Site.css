@@ -93,10 +93,37 @@ html {
 body {
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Microsoft YaHei', sans-serif;
+    font-family: Verdana, 'Microsoft YaHei';
     font-size: 12px;
     background-color: #f5f5f5;
 }
+
+/*只支持滚动条现代浏览器 参考 https://segmentfault.com/q/1010000006984844 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:vertical {
+    display: none;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+    background-color: #e2e2e2;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgba(0,0,0,.28);
+}
+
+    ::-webkit-scrollbar-thumb:vertical:hover {
+        background-color: rgba(0,0,0,.35);
+    }
+
+    ::-webkit-scrollbar-thumb:vertical:active {
+        background-color: rgba(0,0,0,.38);
+    }
 
 /*google material icon*/
 @font-face {
@@ -826,7 +853,7 @@ body {
     }
 
         .panel > .panel-heading .panel-title {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
             padding: 10px 10px;
         }
@@ -839,7 +866,7 @@ body {
 
     .panel.panel-tabs > .panel-heading > .panel-tabs-title {
         position: relative;
-        bottom: -5px;
+        bottom: -6px;
         margin-right: 5px;
     }
 
