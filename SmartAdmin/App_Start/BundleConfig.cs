@@ -26,7 +26,16 @@ namespace SmartAdmin
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
-                      "~/Scripts/datatables.js"));
+                      "~/Scripts/datatables.js",
+                      "~/Scripts/datatable.pagination.input.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/components").Include(
+                      "~/Scripts/pace.js",
+                      "~/Content/layer/layer.js",
+                      "~/Content/star-rating/js/star-rating.js",
+                      "~/Content/star-rating/themes/krajee-fa/theme.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

@@ -92,5 +92,10 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult ColorTables()
+        {
+            return PartialView();
+        }
     }
 }

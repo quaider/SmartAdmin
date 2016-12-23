@@ -2506,7 +2506,7 @@ input[type=radio][disabled]:checked + label:after {
     background-color: #EEEEEE;
     border-color: #ddd #ddd gainsboro;
     vertical-align: middle;
-    border-width: 1px 1px 5px;
+    border-width: 1px 1px 7px;
     border-style: solid;
 }
 
@@ -2537,6 +2537,231 @@ input[type=radio][disabled]:checked + label:after {
     margin-right: 8px;
 }
 
-.table tbody tr td > a i {
+.table tbody tr td > a.operate i {
     color: #636E7B;
+}
+
+.table tr td img {
+    margin-right: 5px;
+}
+
+/*border覆盖*/
+.panel .panel-body .table-responsive {
+    margin-top: -1px;
+}
+
+.panel .panel-body table {
+    margin-bottom: 0px;
+}
+
+/*Color Table*/
+.table-primary thead tr th {
+    background-color: #00B1E1 !important;
+    border-color: #00c5fb #00c5fb #0095bd !important;
+    color: #fff;
+}
+
+.table-primary tbody tr td.sorting_1 {
+    background: #24d0ff !important;
+    color: white;
+    border-bottom: 1px solid #48d8ff !important;
+}
+
+.table-primary tfoot tr th {
+    background-color: #00B1E1 !important;
+    border-color: #0095bd #00c5fb #00c5fb !important;
+    color: #fff;
+}
+
+.table-primary.table-bordered {
+    border: 1px solid #00B1E1;
+}
+
+    .table-primary.table-bordered thead tr th:first-child, .table-primary.table-bordered thead tr th:last-child, .table-primary.table-bordered tfoot tr th:first-child, .table-primary.table-bordered tfoot tr th:last-child {
+        border-radius: 0px;
+        border-radius: 0px !important;
+    }
+
+    .table-primary.table-bordered tbody tr td.sorting_1 {
+        border-right: 1px solid #48d8ff !important;
+    }
+
+.table-primary table.has-columns-hidden > tbody > tr > td > span.responsiveExpander:before {
+    color: white;
+}
+
+.table-primary table.has-columns-hidden > tbody > tr.detail-show > td span.responsiveExpander:before {
+    color: white;
+}
+
+
+
+/*!
+ * bootstrap-star-rating v4.0.2
+ * http://plugins.krajee.com/star-rating
+ *
+ * Author: Kartik Visweswaran
+ * Copyright: 2014 - 2016, Kartik Visweswaran, Krajee.com
+ *
+ * Licensed under the BSD 3-Clause
+ * https://github.com/kartik-v/bootstrap-star-rating/blob/master/LICENSE.md
+ */
+.rating-loading {
+    width: 25px;
+    height: 25px;
+    font-size: 0;
+    color: #fff;
+    background: transparent url('../img/loading.gif') top left no-repeat;
+    border: none;
+}
+
+/*
+ * Stars
+ */
+.rating-container .rating {
+    cursor: default;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rating-disabled .rating {
+    cursor: not-allowed;
+}
+
+.rating-container .star {
+    display: inline-block;
+    margin: 0 3px;
+    text-align: center;
+}
+
+.rating-container .empty-stars {
+    color: #636E7B;
+}
+
+.rating-container .filled-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto;
+    color: #81b71a;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.rating-rtl {
+    float: right;
+}
+
+.rating-animate .filled-stars {
+    transition: width 0.25s ease;
+    -o-transition: width 0.25s ease;
+    -moz-transition: width 0.25s ease;
+    -webkit-transition: width 0.25s ease;
+}
+
+.rating-rtl .filled-stars {
+    left: auto;
+    right: 0;
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+    transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+}
+
+.rating-rtl.is-star .filled-stars {
+    right: 0.06em;
+}
+
+.rating-rtl.is-heart .empty-stars {
+    margin-right: 0.07em;
+}
+
+/**
+ * Sizes
+ */
+.rating-xl {
+}
+
+.rating-lg {
+}
+
+.rating-md {
+}
+
+.rating-sm {
+}
+
+.rating-xs {
+}
+
+.rating-xl {
+}
+
+/**
+ * Clear
+ */
+.rating-container .clear-rating {
+    color: #aaa;
+    cursor: not-allowed;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 60%;
+}
+
+.clear-rating-active {
+    cursor: pointer !important;
+}
+
+    .clear-rating-active:hover {
+        color: #843534;
+    }
+
+.rating-container .clear-rating {
+    padding-right: 5px;
+}
+
+/**
+ * Caption
+ */
+.rating-container .caption {
+    color: #999;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 60%;
+    margin-top: -0.6em;
+}
+
+.rating-container .caption {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.rating-rtl .caption {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+/**
+ * Print
+ */
+@media print {
+    .rating-container .clear-rating {
+        display: none;
+    }
+}
+
+/*font awesome theme*/
+.theme-krajee-fa .star {
+    font-size: 1.1em;
+}
+
+.theme-krajee-fa .caption {
+    margin-top: -0.2em;
+}
+
+.table .theme-krajee-fa .star {
+    font-size: 14px;
 }
