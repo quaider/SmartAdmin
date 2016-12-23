@@ -25,7 +25,7 @@
             </div>
             <div class="panel-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-striped table-primary">
+                    <table id="coloredTable" class="table table-striped table-primary">
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 45px">序号</th>
@@ -47,7 +47,7 @@
                                 <td>前端交互设计师</td>
                                 <td>
                                     <input name="input-name" type="number" class="rating rating-loading" value="4"
-                                            data-min="0" data-max="5"  data-step="1" data-size="xs">
+                                           data-min="0" data-max="5" data-step="1" data-size="xs">
                                 </td>
                                 <td class="text-center">
                                     <a href="#" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" data-original-title="查看详情">
@@ -164,6 +164,47 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-blank">
+            <div class="panel-heading">
+                <h3 class="panel-title">预览表格样式</h3>
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-default" onclick="chageStyle('')">
+                    Default
+                </a>
+                <a class="btn btn-primary" onclick="chageStyle('table-primary')">
+                    table-primary
+                </a>
+                <a class="btn btn-success" onclick="chageStyle('table-success')">
+                    table-success
+                </a>
+                <a class="btn btn-info" onclick="chageStyle('table-info')">
+                    table-info
+                </a>
+                <a class="btn btn-warning" onclick="chageStyle('table-warning')">
+                    table-warning
+                </a>
+                <a class="btn btn-danger" onclick="chageStyle('table-danger')">
+                    table-danger
+                </a>
+                <a class="btn btn-lilac" onclick="chageStyle('table-lilac')">
+                    table-lilac
+                </a>
+                <a class="btn btn-teal" onclick="chageStyle('table-teal')">
+                    table-teal
+                </a>
+                <a class="btn btn-inverse" onclick="chageStyle('table-inverse')">
+                    table-inverse
+                </a>
+                <a class="btn btn-default" onclick="chageStyle('table-bordered')">
+                    table-bordered
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip({
@@ -174,5 +215,18 @@
             displayOnly: true,
             theme: 'krajee-fa'
         });
-    })
+    });
+
+    var prevClassName = "table-primary";
+
+    function chageStyle(className) {
+
+        if (className === "table-bordered") {
+            $("#coloredTable").toggleClass("table-bordered");
+            return;
+        }
+
+        $("#coloredTable").removeClass(prevClassName).addClass(className);
+        prevClassName = className;
+    }
 </script>
