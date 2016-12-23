@@ -1,2 +1,10 @@
-# MyBootstrapUi
-My Bootstrap Ui
+# SmartAdmin
+## 说在前头
+创建SmartAdmin并开源的目的，是为了提供一套整合各种常用元素和前端插件的较为通用的解决方案，
+减少前端页面布局及插件开发选型等重复性工作。
+>
+这不是一套UI框架，她只是一套对Bootstrap进行深度的定制的皮肤方案，目前只提供对默认的皮肤，并且会逐渐完善；
+由于平时时间不多，所以可能会频繁commit，暂时不建议使用！
+>运行环境：IE9及以上版本、其他现代浏览器(chrome, firefox等)
+
+### 如果您有好的建议或优化方案，请务必联系我 pto.kratos@hotmail.com
