@@ -97,5 +97,10 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult DataTables()
+        {
+            return PartialView();
+        }
     }
 }

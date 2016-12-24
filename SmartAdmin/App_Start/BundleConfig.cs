@@ -26,7 +26,8 @@ namespace SmartAdmin
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
-                      "~/Scripts/datatables.js",
+                      "~/Content/DataTables/js/jquery.dataTables.js",
+                      "~/Content/DataTables/js/dataTables.bootstrap.js",
                       "~/Scripts/datatable.pagination.input.js"
                       ));
 
@@ -41,7 +42,7 @@ namespace SmartAdmin
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/nanoscroller.css",
-                      "~/Content/datatables.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css",
                       //"~/Content/themes/dark/theme.css",
                       "~/Content/site.css"));
         }
