@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="-md-12">
+    <div class="col-md-12">
         <div class="panel panel-blank">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -31,10 +31,10 @@
                         <tr>
                             <th class="text-center" style="width: 45px">序号</th>
                             <th>姓名</th>
-                            <th>地区</th>
+                            <th data-visible="false">地区</th>
                             <th>职业</th>
                             <th>评级</th>
-                            <th class="text-center">操作</th>
+                            <th class="text-center" data-orderable="false">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,7 +43,7 @@
                             <td>
                                 <span>张九零</span>
                             </td>
-                            <td>中国 - 上海市</td>
+                            <td data-visible="false">中国 - 上海市</td>
                             <td>前端交互设计师</td>
                             <td>
                                 <input name="input-name" type="number" class="rating rating-loading" value="4"
@@ -66,7 +66,7 @@
                             <td>
                                 <span>菜菜</span>
                             </td>
-                            <td>广东 - 深圳市</td>
+                            <td data-visible="false">广东 - 深圳市</td>
                             <td>后端小菜</td>
                             <td>
                                 <input name="input-name" type="number" class="rating rating-loading" value="3"
@@ -89,7 +89,7 @@
                             <td>
                                 <span>艾青</span>
                             </td>
-                            <td>广东 - 深圳市</td>
+                            <td data-visible="false">广东 - 深圳市</td>
                             <td>前端工程师</td>
                             <td>
                                 <input name="input-name" type="number" class="rating rating-loading" value="4"
@@ -112,7 +112,7 @@
                             <td>
                                 <span>任我行</span>
                             </td>
-                            <td>中国 - 上海市</td>
+                            <td data-visible="false">中国 - 上海市</td>
                             <td>高级码农</td>
                             <td>
                                 <input name="input-name" type="number" class="rating rating-loading" value="4"
@@ -135,7 +135,7 @@
                             <td>
                                 <span>柯镇恶</span>
                             </td>
-                            <td>浙江 - 杭州市</td>
+                            <td data-visible="false">浙江 - 杭州市</td>
                             <td>技术总监</td>
                             <td>
                                 <input name="input-name" type="number" class="rating rating-loading" value="2"
@@ -160,7 +160,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-md-12">
         <div class="panel panel-blank">
             <div class="panel-heading">
                 <h3 class="panel-title">预览表格样式</h3>
@@ -205,15 +205,27 @@
 </div>
 <script>
     $(function () {
-        $("table.table").dataTable({
-            "language": {
-                "url": "Scripts/i18n/datatable.lang.chinese.json"
+        var tb = $("table.table").dataTable({
+            //禁用表格自动计算大小(或者设置table的width为100%)
+            bAutoWidth: false,
+            buttons: [
+            {
+                extend: 'colvis',
+                columns: ':not(:first-child)'
             }
+            ]
         });
 
         $('[data-toggle="tooltip"]').tooltip({
             container: 'body'
         });
+
+        // Settings().aoColumns[].nTh
+        var a = tb.api().settings()[0].aoColumns;
+        var b = tb.api().settings()[0].aoColumns.map(function (idx, i) {
+            return tb.api().settings()[0].aoColumns[i].sTitle;
+        });
+        //debugger;
     });
 
     var prevClassName = "table-primary";

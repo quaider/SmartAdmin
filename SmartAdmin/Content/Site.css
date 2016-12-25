@@ -1423,24 +1423,38 @@ body {
 
 
 /*bs page*/
-.pagination > li > a, .pagination > li > span {
-    color: inherit;
-    transition: all ease-in-out .15s;
+.pagination {
+    border-radius: 3px;
 }
 
-    .pagination > li > a:hover, .pagination > li > span:hover,
-    .pagination > li > a:focus, .pagination > li > span:focus {
-        background-color: #e6e6e6;
-        border-color: #adadad;
-        color: inherit;
+    .pagination > li:first-child > a, .pagination > li:first-child > span {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
     }
 
-.pagination > .active > a, .pagination > .active > span,
-.pagination > .active > a:hover, .pagination > .active > span:hover,
-.pagination > .active > a:focus, .pagination > .active > span:focus {
-    background-color: #00B1E1;
-    border-color: #009ec9;
-}
+    .pagination > li:last-child > a, .pagination > li:last-child > span {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        color: inherit;
+        transition: all ease-in-out .15s;
+    }
+
+        .pagination > li > a:hover, .pagination > li > span:hover,
+        .pagination > li > a:focus, .pagination > li > span:focus {
+            background-color: #e6e6e6;
+            border-color: #adadad;
+            color: inherit;
+        }
+
+    .pagination > .active > a, .pagination > .active > span,
+    .pagination > .active > a:hover, .pagination > .active > span:hover,
+    .pagination > .active > a:focus, .pagination > .active > span:focus {
+        background-color: #00B1E1;
+        border-color: #009ec9;
+    }
 
 
 /*popover*/
@@ -2788,13 +2802,13 @@ input[type=radio][disabled]:checked + label:after {
     border: 1px solid #906094;
 }
 
-    .table-lilac.table-bordered.table-sort-bg thead tr th:first-child, .table-lilac.table-bordered thead tr th:last-child, .table-lilac.table-bordered tfoot tr th:first-child, .table-lilac.table-bordered tfoot tr th:last-child {
+    .table-lilac.table-bordered thead tr th:first-child, .table-lilac.table-bordered thead tr th:last-child, .table-lilac.table-bordered tfoot tr th:first-child, .table-lilac.table-bordered tfoot tr th:last-child {
         -moz-border-radius: 0px !important;
         -webkit-border-radius: 0px;
         border-radius: 0px !important;
     }
 
-    .table-lilac.table-bordered tbody tr td.sorting_1 {
+    .table-lilac.table-bordered.table-sort-bg tbody tr td.sorting_1 {
         border-right: 1px solid #884f8c !important;
     }
 
@@ -2890,6 +2904,8 @@ input[type=radio][disabled]:checked + label:after {
 .table-no-border tr td {
     border-top: none !important;
 }
+
+/*datatable style*/
 
 
 /*!
