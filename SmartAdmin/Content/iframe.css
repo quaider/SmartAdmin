@@ -1,0 +1,31 @@
+﻿/*!
+ * Bootstrap work with iframe
+ * 利用 vh及borderbox实现iframe高度的自适应问题 
+ * 关于vh 参考 http://www.css88.com/book/css/values/length/vh.htm
+ * 关于 padding和border是否算在元素的宽高中可参考 http://blog.csdn.net/hepcwl/article/details/44079667
+ */
+html {
+    height: 100vh;
+}
+
+body, #wrapper {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content-page {
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 48px;
+}
+
+    .content-page .content {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+/* ========================================================================
+ * iframe 内容页布局
+ * ======================================================================== */
+

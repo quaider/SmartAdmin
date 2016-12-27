@@ -120,6 +120,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IframeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -289,6 +290,7 @@
     <Content Include="Content\examples\images\style_color_colorscheme_palette1_example.png" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\iframe.css" />
     <Content Include="Content\layer\layer.js" />
     <Content Include="Content\layer\mobile\layer.js" />
     <Content Include="Content\layer\mobile\need\layer.css" />
@@ -449,6 +451,9 @@
     <Content Include="Content\star-rating\package.json" />
     <Content Include="Content\star-rating\README.md" />
     <Content Include="Views\Home\DataTables.cshtml" />
+    <Content Include="Views\Iframe\Index.cshtml" />
+    <Content Include="Views\Shared\_IframeLayout.cshtml" />
+    <Content Include="Views\Iframe\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

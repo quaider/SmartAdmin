@@ -38,7 +38,7 @@ namespace SmartAdmin
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/components").Include(
-                      "~/Scripts/pace.js",
+                      //"~/Scripts/pace.js",
                       "~/Content/layer/layer.js",
                       "~/Content/star-rating/js/star-rating.js",
                       "~/Content/star-rating/themes/krajee-fa/theme.js"

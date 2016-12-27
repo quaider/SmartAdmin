@@ -59,6 +59,14 @@
     margin: 0 !important;
 }
 
+.round3 {
+    border-radius: 3px !important;
+}
+
+.round5 {
+    border-radius: 5px !important;
+}
+
 /* ========================================================================
  * Bootstrap 布局 override
  * ======================================================================== */
@@ -167,12 +175,14 @@ body {
         line-height: 1.2;
     }
 
+/*整个布局容器*/
 #wrapper {
     height: 100%;
     overflow: hidden;
     width: 100%;
 }
 
+/*顶部栏*/
 .topbar {
     left: 0px;
     position: fixed;
@@ -654,6 +664,7 @@ body {
 #wrapper.sidebar-collapsed .content-page {
     margin-left: 60px;
 }
+
 
 /*页脚*/
 .footer {
@@ -1169,6 +1180,53 @@ body {
         color: rgba(255,255,255,0.8);
     }
 
+/* ========================================================================
+ * panel stats
+ * ======================================================================== */
+.panel-stats {
+    position: relative;
+    padding: 15px;
+    overflow: hidden;
+}
+
+    .panel-stats .stats-icon {
+        font-size: 42px;
+        height: 56px;
+        width: 56px;
+        text-align: center;
+        line-height: 56px;
+        margin-left: 15px;
+        color: #fff;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        opacity: .2;
+        filter: alpha(opacity=20);
+    }
+
+    .panel-stats .stats-info h4 {
+        font-size: 14px;
+        margin: 5px 0;
+        color: #fff;
+    }
+
+    .panel-stats .stats-info p {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 0;
+        color: #fff;
+    }
+
+    .panel-stats .stats-link > a {
+        display: block;
+        margin: 15px -15px -15px;
+        padding: 7px 15px;
+        background: rgba(0,0,0,.3);
+        text-align: right;
+        color: #ddd;
+        font-weight: 300;
+        text-decoration: none;
+    }
 
 /*按钮*/
 .btn {
