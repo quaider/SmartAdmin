@@ -41,7 +41,8 @@ namespace SmartAdmin
                       //"~/Scripts/pace.js",
                       "~/Content/layer/layer.js",
                       "~/Content/star-rating/js/star-rating.js",
-                      "~/Content/star-rating/themes/krajee-fa/theme.js"
+                      "~/Content/star-rating/themes/krajee-fa/theme.js",
+                      "~/Content/zTree_v3/js/jquery.ztree.core.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -51,6 +52,9 @@ namespace SmartAdmin
                       "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/DataTables/css/buttons.bootstrap.css",
                       "~/Content/DataTables/css/responsive.bootstrap.css",
+                      //"~/Content/zTree_v3/css/metroStyle/metroStyle.css",
+                      "~/Content/zTree_v3/css/awesomeStyle/awesome.css",
+                      "~/Content/zTree_v3/css/awesomeStyle/awesome.fixed.css",
                       //"~/Content/themes/dark/theme.css",
                       "~/Content/site.css"));
         }

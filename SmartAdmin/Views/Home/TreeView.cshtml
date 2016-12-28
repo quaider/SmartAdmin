@@ -1,0 +1,105 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <div class="page-title-box">
+            <h4 class="page-title pull-left">TreeView</h4>
+            <ol class="breadcrumb pull-right">
+                <li>
+                    <a href="javascript:void(0)">Smart Admin</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">UI 元素</a>
+                </li>
+                <li class="active">
+                    TreeView
+                </li>
+            </ol>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">看看长啥样</h3>
+            </div>
+            <div class="panel-body">
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">看看长啥样</h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">看看长啥样</h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">看看长啥样</h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var zTreeObj;
+    // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+    var setting = {};
+    // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+    var zNodes = [
+        {
+            name: "设备购置类合同",
+            open: true,
+            children: [
+                { name: "机电类" },
+                { name: "生活家具购置类" },
+                { name: "设备购置预留费用类" }
+            ]
+        },
+        {
+            name: "其他费用类合同",
+            open: true,
+            children: [
+                {
+                    name: "新增费用类",
+                    open: true,
+                    children: [
+                        { name: "服务类合同" },
+                        { name: "监测合同" }
+                    ]
+                },
+                {
+                    name: "建设项目管理费类",
+                    open: true,
+                    children: [
+                        { name: "建设单位管理费类" },
+                        { name: "设计文件审查费类" },
+                        { name: "工程监理费(含第三方检测)" }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    $(function () {
+        zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+</script>

@@ -102,5 +102,10 @@ namespace SmartAdmin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult TreeView()
+        {
+            return PartialView();
+        }
     }
 }

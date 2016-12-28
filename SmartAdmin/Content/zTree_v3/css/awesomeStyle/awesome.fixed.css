@@ -1,0 +1,49 @@
+﻿.ztree {
+    background-color: transparent;
+}
+
+    .ztree * {
+        background-color: transparent;
+    }
+
+    .ztree li a {
+        height: auto;
+        padding: 3px 10px 3px 5px;
+        color: #333;
+    }
+
+        .ztree li a.curSelectedNode {
+            height: auto;
+            padding: 3px 10px 3px 5px !important;
+            background-color: #00B1E1;
+            color: #fff;
+        }
+
+    .ztree li span.button {
+        margin-right: 5px;
+        font-size: 14px;
+        width: 16px;
+        height: 16px;
+    }
+
+        .ztree li span.button.switch {
+            width: 15px;
+            height: 23px;
+            margin-right: 2px;
+        }
+
+        .ztree li span.button::before {
+            color: #333;
+        }
+
+        .ztree li span.button.ico_open::before {
+            color: #333;
+        }
+
+        .ztree li span.button.ico_close::before {
+            color: #333;
+        }
+
+        .ztree li span.button.ico_docu::before {
+            color: #333;
+        }
