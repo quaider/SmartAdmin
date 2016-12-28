@@ -304,6 +304,7 @@
     <Content Include="Content\themes\dark\theme.css" />
     <Content Include="Content\zTree_v3\css\awesomeStyle\awesome.css" />
     <Content Include="Content\zTree_v3\css\awesomeStyle\awesome.fixed.css" />
+    <Content Include="Content\zTree_v3\css\awesomeStyle\img\32px.png" />
     <Content Include="Content\zTree_v3\css\awesomeStyle\img\loading.gif" />
     <Content Include="Content\zTree_v3\css\metroStyle\img\line_conn.png" />
     <Content Include="Content\zTree_v3\css\metroStyle\img\loading.gif" />

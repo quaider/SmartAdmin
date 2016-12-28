@@ -391,14 +391,16 @@ body {
     }
 
     #sidebar-menu > ul > li.subdrop {
-        border-top: 1px solid rgba(0,0,0,0.1);
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-top: 1px solid #242931;
+        border-bottom: 1px solid #242931;
         background-color: #202a2f;
     }
 
         /*一级菜单背景色 展开和划入时*/
         #sidebar-menu > ul > li.subdrop > a, #sidebar-menu > ul > li > a:hover {
             background-color: #272c35;
+            color: #fff;
+            transition: all linear 0.15s;
         }
 
     #sidebar-menu > ul > li.active > a {
@@ -523,12 +525,13 @@ body {
     #sidebar-menu .nav > li > a:hover,
     #sidebar-menu .nav > li.active > a,
     #sidebar-menu .nav > li.has-sub.subdrop > a {
-        background-color: #1c2429;
+        background-color: transparent;
         color: #FFFFFF;
     }
 
+    /*2级以上*/
     #sidebar-menu > ul > li.subdrop li.subdrop > a, #sidebar-menu > ul > li.subdrop li.subdrop > ul.nav {
-        background-color: #1c2429;
+        /*background-color: #1c2429;*/
     }
 
     /*3级菜单*/
