@@ -31,38 +31,52 @@
     <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">看看长啥样</h3>
+                <h3 class="panel-title">不显示虚线，手动加上<code>.noline</code></h3>
             </div>
             <div class="panel-body">
-
+                <ul id="treeDemo2" class="ztree noline"></ul>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">看看长啥样</h3>
+                <h3 class="panel-title">无线复选框树</h3>
             </div>
             <div class="panel-body">
-
+                <ul id="treeDemo3" class="ztree noline"></ul>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">看看长啥样</h3>
+                <h3 class="panel-title">有线复选框树</h3>
             </div>
             <div class="panel-body">
-
+                <ul id="treeDemo4" class="ztree"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">基础编辑功能</h3>
+            </div>
+            <div class="panel-body">
+                <ul id="treeDemo5" class="ztree"></ul>
             </div>
         </div>
     </div>
 </div>
 <script>
-    var zTreeObj;
-    // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
-    var setting = {};
+    var settings = {
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [
         {
@@ -102,6 +116,32 @@
     ];
 
     $(function () {
-        zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        $.fn.zTree.init($("#treeDemo"), settings, zNodes);
+        $.fn.zTree.init($("#treeDemo2"), {
+            view: {
+                showLine: false
+            }
+        }, zNodes);
+
+        $.fn.zTree.init($("#treeDemo3"), {
+            check: {
+                enable: true
+            },
+            view: {
+                showLine: false
+            }
+        }, zNodes);
+
+        $.fn.zTree.init($("#treeDemo4"), {
+            check: {
+                enable: true
+            }
+        }, zNodes);
+
+        $.fn.zTree.init($("#treeDemo5"), {
+            edit: {
+                enable: true
+            }
+        }, zNodes);
     });
 </script>

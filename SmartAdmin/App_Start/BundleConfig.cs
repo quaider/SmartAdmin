@@ -42,7 +42,9 @@ namespace SmartAdmin
                       "~/Content/layer/layer.js",
                       "~/Content/star-rating/js/star-rating.js",
                       "~/Content/star-rating/themes/krajee-fa/theme.js",
-                      "~/Content/zTree_v3/js/jquery.ztree.core.js"
+                      "~/Content/zTree_v3/js/jquery.ztree.core.js",
+                      "~/Content/zTree_v3/js/jquery.ztree.excheck.js",
+                      "~/Content/zTree_v3/js/jquery.ztree.exedit.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

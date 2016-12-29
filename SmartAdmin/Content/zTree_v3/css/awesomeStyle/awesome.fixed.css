@@ -89,7 +89,11 @@
             .ztree li span.button.bottom_docu,
             .ztree li span.button.roots_close,
             .ztree li span.button.center_close,
-            .ztree li span.button.bottom_close {
+            .ztree li span.button.bottom_close,
+            /*no lines*/
+            .ztree li span.button.noline_open,
+            .ztree li span.button.noline_close,
+            .ztree li span.button.noline_docu {
                 background-image: url('img/32px.png');
                 background-position: -132px -4px;
             }
@@ -125,3 +129,124 @@
                 color: #f59c1a;
                 font-size: 14px;
             }
+
+            /*no line fixed*/
+            .ztree li span.button.noline_open {
+                background-position: -36px -4px;
+            }
+
+            .ztree li span.button.noline_close {
+                background-position: -4px -4px;
+            }
+
+            .ztree li span.button.noline_docu {
+                background: 0 0;
+            }
+
+    .ztree.noline li, .ztree.noline li {
+        background: 0 0;
+    }
+
+    /*check tree*/
+    .ztree li span.button.chk {
+        width: 24px;
+        height: 24px;
+        padding-top: 0;
+        line-height: 24px;
+        padding-left: 0;
+        position: relative;
+        cursor: pointer;
+        /*background-image: url('img/32px.png');
+        background-position: -164px -4px;*/
+    }
+
+        .ztree li span.button.chk.checkbox_false_full::before,
+        .ztree li span.button.chk.checkbox_true_full::before,
+        .ztree li span.button.chk.checkbox_false_full_focus::before,
+        .ztree li span.button.chk.checkbox_true_full_focus::before,
+        .ztree li span.button.chk.checkbox_true_part::before,
+        .ztree li span.button.chk.checkbox_true_part_focus::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid #b4b6b7;
+            display: block;
+            background: #fff;
+        }
+
+        .ztree li span.button.chk.checkbox_true_full::after,
+        .ztree li span.button.chk.checkbox_true_full_focus::after {
+            content: '\f00c';
+            font-family: FontAwesome;
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            top: 5px;
+            display: block;
+            line-height: 16px;
+            font-size: 12px;
+            font-style: initial;
+            color: #242a30;
+        }
+
+        .ztree li span.button.chk.checkbox_true_part::after,
+        .ztree li span.button.chk.checkbox_true_part_focus::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            right: 7px;
+            bottom: 7px;
+            top: 7px;
+            display: block;
+            background: #b4b6b7;
+        }
+
+    /*editable*/
+    .ztree li span.button.edit,
+    .ztree li span.button.remove {
+        padding-top: 0;
+        margin-right: 0;
+    }
+
+        .ztree li span.button.edit::before {
+            font-size: 14px;
+            content: '\f040';
+        }
+
+        .ztree li span.button.remove::before {
+            color: #ff403b;
+            content: '\f00d';
+        }
+
+    .ztree li a.curSelectedNode span.button.remove::before {
+        font-weight: 600;
+    }
+
+    .ztree li a.curSelectedNode span.button.remove::before {
+        font-weight: 600;
+    }
+
+    .ztree li a.curSelectedNode_Edit {
+        border: none;
+    }
+
+    .ztree li a input.rename {
+        height: 24px;
+        min-width: 100px;
+        max-width: 200px;
+        width: auto;
+        padding: 0 3px;
+        margin: 0;
+        margin-right: -6px;
+        margin-left: -2px;
+        color: #333;
+        background-color: #ffffff;
+        font-size: 12px;
+        border: 1px #0195bd solid;
+        *border: 0px;
+        border-radius: 2px;
+    }
