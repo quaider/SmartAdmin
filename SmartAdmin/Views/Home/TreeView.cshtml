@@ -68,6 +68,18 @@
             </div>
         </div>
     </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">几点说明</h3>
+            </div>
+            <div class="panel-body">
+                <p>更多示例请参考 <a href="http://www.ztree.me" target="_blank"><code>zTee官网</code></a></p>
+                <p>1、这些树实际上还是zTree，只是扩展了皮肤(jstree风格)。</p>
+                <p>2、所有用法及api保持不变</p>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     var settings = {
@@ -84,7 +96,7 @@
             open: true,
             children: [
                 { name: "机电类" },
-                { name: "生活家具购置类" },
+                { name: "生活家具购置类", chkDisabled: true },
                 { name: "设备购置预留费用类" }
             ]
         },
@@ -96,7 +108,7 @@
                     name: "新增费用类",
                     open: true,
                     children: [
-                        { name: "服务类合同" },
+                        { name: "服务类合同", checked: true },
                         { name: "监测合同" }
                     ]
                 },
@@ -116,13 +128,17 @@
     ];
 
     $(function () {
+        //默认带缩进线的树
         $.fn.zTree.init($("#treeDemo"), settings, zNodes);
+
+        //不带缩进线的树
         $.fn.zTree.init($("#treeDemo2"), {
             view: {
                 showLine: false
             }
         }, zNodes);
 
+        //不带随进线的可勾选树
         $.fn.zTree.init($("#treeDemo3"), {
             check: {
                 enable: true
@@ -132,16 +148,59 @@
             }
         }, zNodes);
 
+        //带随进线的可勾选树
         $.fn.zTree.init($("#treeDemo4"), {
             check: {
                 enable: true
             }
         }, zNodes);
 
+        //可编辑树
         $.fn.zTree.init($("#treeDemo5"), {
             edit: {
-                enable: true
+                enable: true,
+                editNameSelectAll: true,
+                /*控制删除和重命名按钮的显示与隐藏*/
+                showRemoveBtn: showRemoveBtn,
+                showRenameBtn: showRenameBtn
+
+            },
+            view: {
+                addHoverDom: addHoverDom,
+                removeHoverDom: removeHoverDom,
+                selectedMulti: false
             }
         }, zNodes);
     });
+
+    //控制删除按钮的显示与隐藏
+    function showRemoveBtn(treeId, treeNode) {
+        return !treeNode.isFirstNode;
+    }
+
+    //控制重命名按钮的显示与隐藏
+    function showRenameBtn(treeId, treeNode) {
+        return !treeNode.isLastNode;
+    }
+
+    var newCount = 1;
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#" + treeNode.tId + "_span");
+        if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+        var addStr = '<span class="button text-success" id="addBtn_' + treeNode.tId + '"><i class="fa fa-plus"></i></span>';
+        sObj.after(addStr);
+
+        var btn = $("#addBtn_" + treeNode.tId);
+        if (btn.length) {
+            btn.bind("click", function () {
+                var zTree = $.fn.zTree.getZTreeObj("treeDemo5");
+                zTree.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "新的节点" + (newCount++) });
+                return false;
+            });
+        }
+    }
+
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_" + treeNode.tId).remove();
+    }
 </script>

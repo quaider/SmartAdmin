@@ -9,6 +9,10 @@
         font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei';
     }
 
+    .ztree .fa {
+        font: normal normal normal 14px/1 FontAwesome;
+    }
+
     .ztree li {
         background-image: url('img/32px.png');
         background-position: -292px -4px;
@@ -47,9 +51,17 @@
             .ztree li a.curSelectedNode {
                 height: 24px;
                 padding: 0px 4px 0px 1px;
-                background-color: #00B1E1 !important;
-                color: #fff;
+                background-color: #93e8ff !important;
+                color: #333;
                 opacity: 1;
+            }
+
+            .ztree li a span.button + span.button {
+                margin-left: 4px;
+            }
+
+            .ztree li a span.node_name + .button {
+                margin-left: 6px;
             }
 
         .ztree li span.button {
@@ -165,7 +177,8 @@
         .ztree li span.button.chk.checkbox_false_full_focus::before,
         .ztree li span.button.chk.checkbox_true_full_focus::before,
         .ztree li span.button.chk.checkbox_true_part::before,
-        .ztree li span.button.chk.checkbox_true_part_focus::before {
+        .ztree li span.button.chk.checkbox_true_part_focus::before,
+        .ztree li span.button.chk.checkbox_false_part_focus::before {
             content: '';
             position: absolute;
             left: 4px;
@@ -176,6 +189,21 @@
             display: block;
             background: #fff;
         }
+
+        .ztree li span.button.chk.checkbox_false_disable {
+            opacity: 0.5;
+        }
+
+            .ztree li span.button.chk.checkbox_false_disable::before,
+            .ztree li span.button.chk.checkbox_false_part::before {
+                width: 16px;
+                height: 16px;
+                content: '';
+                border: 1px solid #b4b6b7;
+                background: #fff;
+                margin-top: 4px;
+                display: inline-block;
+            }
 
         .ztree li span.button.chk.checkbox_true_full::after,
         .ztree li span.button.chk.checkbox_true_full_focus::after {
@@ -194,7 +222,9 @@
         }
 
         .ztree li span.button.chk.checkbox_true_part::after,
-        .ztree li span.button.chk.checkbox_true_part_focus::after {
+        .ztree li span.button.chk.checkbox_true_part_focus::after,
+        .ztree li span.button.chk.checkbox_false_part::after,
+        .ztree li span.button.chk.checkbox_false_part_focus::after {
             content: '';
             position: absolute;
             left: 7px;
@@ -250,3 +280,18 @@
         *border: 0px;
         border-radius: 2px;
     }
+
+    /*drag fixed*/
+    .ztree li a.tmpTargetNode_inner {
+        height: 24px;
+        color: #333;
+        background-color: #ccc;
+        border: 1px solid #aaa;
+        color: #333 !important;
+    }
+
+span.tmpzTreeMove_arrow::before {
+    content: "\f061";
+    font-size: 12px;
+    color: #009ec9 !important;
+}
