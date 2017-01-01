@@ -898,33 +898,36 @@ body {
 
     .panel > .panel-heading {
         border-radius: 0;
-        padding: 5px;
+        padding: 10px 15px;
     }
 
         .panel > .panel-heading .panel-title {
             font-size: 14px;
             font-weight: 500;
-            padding: 10px 10px;
+            line-height: 20px;
         }
 
         .panel > .panel-heading > .panel-toolbar {
-            margin-top: 3px;
-            margin-right: 5px;
+            margin-top: -4px;
             color: #6d7686;
         }
 
-    .panel.panel-tabs > .panel-heading > .panel-tabs-title {
-        position: relative;
-        bottom: -6px;
-        margin-right: 5px;
+    .panel.panel-tabs > .panel-heading > .panel-tabs-title,
+    .panel.panel-tabs > .panel-heading > .panel-tabs-no-title {
+        margin-top: -1px;
+    }
+
+    .panel.panel-tabs > .panel-heading > .panel-tabs-no-title {
+        margin-bottom: -12px;
     }
 
     .panel > .panel-heading .panel-title > i {
         margin-right: 5px;
     }
 
+    /*白色遮挡panel-header的下边框线*/
     .panel > .panel-heading .nav-tabs {
-        border-bottom-width: 0;
+        border-bottom-color: #fff;
     }
 
     .panel.panel-tabs .tab-content {
@@ -932,45 +935,65 @@ body {
         border: none;
     }
 
-    .panel .nav > li > a:hover, .panel .nav > li > a:focus {
-        background-color: transparent;
-        border-color: transparent;
+    .panel.panel-tabs .nav-tabs > li {
+        margin-bottom: 0px;
     }
 
-    .panel .nav > li > a {
+    .panel.panel-tabs .panel-heading .nav-tabs > li > a {
         color: #fff;
-        padding: 8px 15px;
+        padding: 5px 15px;
+        line-height: 20px;
+        margin-right: 5px;
+        border-color: transparent;
+        transition: all ease-in-out 0.15s;
     }
 
+        .panel.panel-tabs .panel-heading .nav-tabs > li > a:hover,
+        .panel.panel-tabs .panel-heading .nav-tabs > li > a:focus,
+        .panel.panel-tabs .panel-heading .nav-tabs > li.active > a,
+        .panel.panel-tabs .panel-heading .nav-tabs > li.active > a:hover,
+        .panel.panel-tabs .panel-heading .nav-tabs > li.active > a:focus {
+            background-color: #fff;
+            color: #333;
+            border-bottom: 1px solid #fff;
+        }
+
+    .panel.panel-tabs .panel-heading .nav-tabs > li:last-child > a {
+        margin-right: 0;
+    }
+
+/*panel-default*/
 .panel-default > .panel-heading {
     background-color: #fafafa;
-    border-bottom-color: #e3e3e3;
+    border-bottom-color: #ddd;
 }
 
-.panel-default .nav > li > a, .panel-default .nav > li > a:hover {
+.panel-default .nav > li > a,
+.panel-default .nav > li > a:hover {
+    color: #333 !important;
+}
+
+.panel-default.panel-tabs .panel-heading .nav-tabs > li > a:hover,
+.panel-default.panel-tabs .panel-heading .nav-tabs > li > a:focus,
+.panel-default.panel-tabs .panel-heading .nav-tabs > li.active > a,
+.panel-default.panel-tabs .panel-heading .nav-tabs > li.active > a:hover,
+.panel-default.panel-tabs .panel-heading .nav-tabs > li.active > a:focus {
+    background-color: #fff;
     color: #333;
+    border-color: #ddd;
+    border-bottom-color: transparent;
+}
+
+.panel-default .nav > li.active > a,
+.panel-default .nav > li.active > a:hover,
+.panel-default .nav > li.active > a:focus {
 }
 
 .panel .nav-tabs .tab-content {
     padding: 0;
 }
 
-.panel .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
-}
-
-.panel .nav > li.active > a, .panel .nav > li.active > a:hover, .panel .nav > li.active > a:focus {
-    color: #333;
-    border-color: transparent;
-}
-
-.panel-default .nav > li.active > a, .panel-default .nav > li.active > a:hover, .panel-default .nav > li.active > a:focus {
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
-}
-
+/*panel-blank*/
 .panel-blank > .panel-heading {
     border-bottom: 1px solid #ddd;
 }
@@ -1037,10 +1060,14 @@ body {
 }
 
     .panel.panel-just-tabs .nav-tabs > li > a {
-        padding: 14px 20px;
+        padding: 11px 20px;
         color: #999;
         border: none;
     }
+
+        .panel.panel-just-tabs .nav-tabs > li > a:hover {
+            background-color: transparent;
+        }
 
     .panel.panel-just-tabs .nav-tabs > li.active > a {
         border: none;
@@ -1184,7 +1211,7 @@ body {
 }
 
     .panel-group .panel .panel-heading a[data-toggle=collapse] {
-        padding: 10px 0;
+        padding: 5px 0 6px 0;
         display: block;
     }
 
@@ -2096,7 +2123,6 @@ form .form-row.form-row-divider {
     transition: border-color linear .25s;
     /*后台系统文本框不宜过高*/
     height: 31px;
-    line-height: 31px;
     font-size: 12px;
 }
 
@@ -2107,6 +2133,18 @@ form .form-row.form-row-divider {
     .form-control:focus {
         border: 1px solid #00b1e1;
     }
+
+/*input group*/
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group {
+    margin-right: 0;
+}
+
+.input-group > .form-control,
+.input-group > .input-group-addon,
+.input-group > .input-group-btn > .btn {
+    height: 31px;
+}
 
 .has-feedback .form-control {
     padding-right: 35px;
@@ -2135,25 +2173,40 @@ form .form-row.form-row-divider {
 
 .input-sm {
     height: 29px;
-    line-height: 29px;
     padding: 5px 12px;
 }
 
-    .input-sm + .form-control-feedback, .input-group-sm + .form-control-feedback, .form-group-sm .form-control + .form-control-feedback {
+    .input-sm + .form-control-feedback,
+    .input-group-sm + .form-control-feedback,
+    .form-group-sm .form-control + .form-control-feedback {
         height: 29px;
         line-height: 29px;
     }
 
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+    height: 29px;
+}
+
 .input-lg {
     height: 38px;
-    line-height: 38px;
     padding: 8px 12px;
 }
 
-    .input-lg + .form-control-feedback, .input-group-lg + .form-control-feedback, .form-group-lg .form-control + .form-control-feedback {
+    .input-lg + .form-control-feedback,
+    .input-group-lg + .form-control-feedback,
+    .form-group-lg .form-control + .form-control-feedback {
         height: 38px;
         line-height: 38px;
     }
+
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+    height: 38px;
+    padding: 6.5px 16px;
+}
 
 /*多行行高重置为默认值*/
 textarea.form-control {
@@ -2176,6 +2229,35 @@ textarea.form-control {
     .input-group-addon i {
         /*font-size: 14px;*/
     }
+
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+    border-radius: 3px;
+}
+
+/*因为css先后顺序的问题，这里直接copy form.less相关样式*/
+.input-group :last-child.form-control,
+:last-child.input-group-addon,
+:last-child.input-group-btn > .btn,
+:last-child.input-group-btn > .btn-group > .btn,
+:last-child.input-group-btn > .dropdown-toggle,
+:first-child.input-group-btn > :not(:first-child).btn,
+:first-child.input-group-btn > :not(:first-child).btn-group > .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.input-group :first-child.form-control,
+:first-child.input-group-addon,
+:first-child.input-group-btn > .btn,
+:first-child.input-group-btn > .btn-group > .btn,
+:first-child.input-group-btn > .dropdown-toggle,
+:last-child.input-group-btn > :not(:last-child):not(.dropdown-toggle).btn,
+:last-child.input-group-btn > :not(:last-child).btn-group > .btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
 
 .form-horizontal .has-feedback .form-control-feedback {
     right: 10px;
