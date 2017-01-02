@@ -315,6 +315,14 @@
     <Content Include="Content\layer\skin\default\loading-1.gif" />
     <Content Include="Content\layer\skin\default\loading-2.gif" />
     <Content Include="Content\layer\skin\smart\style.css" />
+    <Content Include="Content\select2\css\select2.css" />
+    <Content Include="Content\select2\css\select2.min.css" />
+    <Content Include="Content\select2\i18n\en.js" />
+    <Content Include="Content\select2\i18n\zh-CN.js" />
+    <Content Include="Content\select2\select2.full.js" />
+    <Content Include="Content\select2\select2.full.min.js" />
+    <Content Include="Content\select2\select2.js" />
+    <Content Include="Content\select2\select2.min.js" />
     <Content Include="Content\themes\dark\theme.css" />
     <Content Include="Content\zTree_v3\api\apiCss\api.js" />
     <Content Include="Content\zTree_v3\api\apiCss\common.css" />

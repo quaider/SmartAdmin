@@ -39,6 +39,7 @@ namespace SmartAdmin
 
             bundles.Add(new ScriptBundle("~/bundles/components").Include(
                       //"~/Scripts/pace.js",
+                      "~/Content/select2/select2.js",
                       "~/Content/layer/layer.js",
                       "~/Content/star-rating/js/star-rating.js",
                       "~/Content/star-rating/themes/krajee-fa/theme.js",
@@ -51,6 +52,7 @@ namespace SmartAdmin
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/select2/css/select2.css",
                       "~/Content/nanoscroller.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/DataTables/css/buttons.bootstrap.css",
