@@ -21,7 +21,6 @@ namespace SmartAdmin
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/jquery.nanoscroller.js",
                       "~/Scripts/jquery.slimscroll.js",
                       "~/Scripts/respond.js"));
 
@@ -53,7 +52,6 @@ namespace SmartAdmin
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/select2/css/select2.css",
-                      "~/Content/nanoscroller.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/DataTables/css/buttons.bootstrap.css",
                       "~/Content/DataTables/css/responsive.bootstrap.css",
