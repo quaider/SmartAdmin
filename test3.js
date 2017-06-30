@@ -56,87 +56,104 @@
 	Table.prototype = {
 
 		get: function(key) {
-
+			var self = this;
 			return new Dexie.Promise(function(resolve, reject) {
-
-				var realKey = this._generateKey(key);
-				var jsonStr = this._service().getItem(realKey);
-				var result = JSON.parse(jsonStr);
-
-				resolve(result);
+				resolve(self._getSync(key));
 			});
 		},
 
-		set: function(key, value) {
+		_getSync: function(key) {
+			var realKey = this._generateKey(key);
+			var jsonStr = this._service().getItem(realKey);
+			var result = JSON.parse(jsonStr);
 
+			return result;
+		},
+
+		set: function(key, value) {
+			var self = this;
 			return new Dexie.Promise(function(resolve, reject) {
 
-				var realKey = this._generateKey(key);
+				var realKey = self._generateKey(key);
 				if(typeof value === 'object') {
 					value = JSON.stringify(value);
 				}
 
-				this._service().setItem(realKey, value);
+				self._service().setItem(realKey, value);
 
 				resolve();
 			});
 		},
 
 		remove: function(key) {
-			var realKey = this._generateKey(key);
-			this._service().removeItem(realKey);
+			var self = this;
+			return new Dexie.Promise(function(resolve, reject) {
+				var realKey = self._generateKey(key);
+				self._service().removeItem(realKey);
+				resolve();
+			});
+
 		},
 
 		count: function() {
-			var table = this;
-			var exp = new RegExp("^" + table.name + "\\..+");
-			var len = 0,
-				service = table._service();
+			var self = this;
+			return new Dexie.Promise(function(resolve, reject) {
+				var exp = new RegExp("^" + self.name + "\\..+");
+				var len = 0,
+					service = self._service();
 
-			//暂时遍历所有key
-			for(var i = 0; i < service.getLength(); i++) {
-				var keyName = service.key(i);
-				if(!exp.test(keyName)) continue;
-				len++;
-			}
+				//暂时遍历所有key
+				for(var i = 0; i < service.getLength(); i++) {
+					var keyName = service.key(i);
+					if(!exp.test(keyName)) continue;
+					len++;
+				}
 
-			return len;
+				resolve(len);
+			});
 		},
 
 		gets: function() {
-			var table = this;
-			var exp = new RegExp("^" + table.name + "\\..+");
-			var arr = [],
-				service = table._service();
+			var self = this;
+			return new Dexie.Promise(function(resolve, reject) {
+				var exp = new RegExp("^" + self.name + "\\..+");
+				var arr = [],
+					service = self._service();
 
-			//暂时遍历所有key
-			for(var i = 0; i < service.getLength(); i++) {
-				var keyName = service.key(i);
+				//暂时遍历所有key
+				for(var i = 0; i < service.getLength(); i++) {
+					var keyName = service.key(i);
 
-				if(!exp.test(keyName)) continue;
-				var item = table.get(keyName.substring(table.name.length + 1));
-				arr.push(item);
-			}
+					if(!exp.test(keyName)) continue;
+					var item = self._getSync(keyName.substring(self.name.length + 1));
+					arr.push(item);
+				}
 
-			return arr;
+				resolve(arr);
+			});
+
 		},
 
 		clear: function() {
-			var table = this;
-			var exp = new RegExp("^" + table.name + "\\..+");
-			var service = table._service();
-			var keyNames = [];
+			var self = this;
+			return new Dexie.Promise(function(resolve, reject) {
+				var exp = new RegExp("^" + self.name + "\\..+");
+				var service = self._service();
+				var keyNames = [];
 
-			//暂时遍历所有key
-			for(var i = 0, len = service.getLength(); i < len; i++) {
-				var keyName = service.key(i);
-				if(!exp.test(keyName)) continue;
-				keyNames.push(keyName);
-			}
+				//暂时遍历所有key
+				for(var i = 0, len = service.getLength(); i < len; i++) {
+					var keyName = service.key(i);
+					if(!exp.test(keyName)) continue;
+					keyNames.push(keyName);
+				}
 
-			for(var i = 0; i < keyNames.length; i++) {
-				service.removeItem(keyNames[i]);
-			}
+				for(var i = 0; i < keyNames.length; i++) {
+					service.removeItem(keyNames[i]);
+				}
+
+				resolve();
+			});
 		},
 
 		toArray: function() {
@@ -155,8 +172,78 @@
 		},
 
 		_service: function() {
-			//		this.service = plus.storage;
 			return plus.storage;
+		}
+	};
+
+	function IndexDb(name) {
+		this.name = name;
+		this._dexieDb = new Dexie(name);
+
+		this._cfg = {
+			storeSource: {},
+			tables: [],
+			version: 1
+		};
+
+		this.version = function(version) {
+			this._cfg.version = version || 1;
+			this._dexieDb.version(version);
+			return this;
+		}
+
+		this._tableFactory = function createTable(name) {
+			var table = new IndexDbTable(name, this);
+			this._cfg.tables.push(table);
+			return table;
+		};
+
+		this.stores = function(stores) {
+			var version = this._cfg.version;
+			this._cfg.storeSource = stores;
+
+			this._dexieDb.version(version).stores(stores);
+			setApiOnPlace([this._db], keys(stores), this._db);
+
+			return this;
+		}
+
+		this._db = this;
+	}
+
+	function IndexDbTable(name, db) {
+		this._db = db._dexieDb;
+		this._table = this._db.table(name);
+	}
+
+	IndexDbTable.prototype = {
+
+		get: function(key) {
+			return this._table.get(key);
+		},
+
+		set: function(key, value) {
+			return this._table.put(value);
+		},
+
+		remove: function(key) {
+			return this._table.delete(key);
+		},
+
+		count: function() {
+			return this._table.count();
+		},
+
+		gets: function() {
+			return this._table.toArray();
+		},
+
+		clear: function() {
+			return this._table.clear();
+		},
+
+		toArray: function() {
+			return this._table.toArray();
 		}
 	};
 
@@ -170,101 +257,46 @@
 		get: function(key) {
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				db[tableName].get(key).then(function(item) {
-					resolve(item);
-				});
-			});
-
+			return db[tableName].get(key);
 		},
 
 		gets: function() {
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				if(useIndexDb) {
-					db[tableName].toArray().then(function(arr) {
-						resolve(arr);
-					});
-				} else {
-					resolve(db[tableName].gets());
-				}
-			});
+			return db[tableName].gets();
 		},
 
 		set: function(key, value) {
 
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				if(useIndexDb) {
-
-				} else {
-					resolve(db[tableName].set(key, value));
-				}
-
-				db[tableName].put(value).then(function(item) {
-					resolve(item);
-				});
-			});
+			return db[tableName].set(key, value);
 		},
 
-		len: function() {
+		count: function() {
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				if(useIndexDb) {
-					db[tableName].count().then(function(item) {
-						resolve(item);
-					});
-				} else {
-					resolve(db[tableName].len());
-				}
-			});
+			return db[tableName].count();
 		},
 
 		remove: function(key) {
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				if(useIndexDb) {
-					db[tableName].delete(key).then(function() {
-						resolve();
-					});
-				} else {
-					resolve(db[tableName].remove(key));
-				}
-			});
+			return db[tableName].remove(key);
 		},
 
 		clear: function() {
 			var db = this._db._realDb;
 			var tableName = this.name;
-			var useIndexDb = this._db.useIndexDb;
 
-			return new Dexie.Promise(function(resolve, reject) {
-				if(useIndexDb) {
-					db[tableName].clear().then(function() {
-						resolve();
-					});
-				} else {
-					resolve(db[tableName].clear());
-				}
-			});
+			return db[tableName].clear();
 		}
 	};
-
-	var _useIndexDb;
 
 	/*
 	 * 存储实现
@@ -300,7 +332,7 @@
 
 		function createRealDb(name, useIndexDb) {
 			if(useIndexDb) {
-				return new Dexie(name);
+				return new IndexDb(name);
 			}
 
 			return new PlusStorageDb(name);
