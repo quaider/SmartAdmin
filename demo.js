@@ -82,14 +82,6 @@ var demo = {
 				var shouldPersistData = [];
 				var maxSize = 10;
 
-				if(distinctList.length > maxSize) {
-					for(var i = 0; i < maxSize; i++) {
-						shouldPersistData.push(distinctList[i]);
-					}
-				} else {
-					shouldPersistData = list;
-				}
-
 				//self._localLengh + distinctList.length <= maxSize 则存储list全部
 				//distinctList.length >= maxSize 则存储list前maxSize条数据
 				//self._localLengh + distinctList.length > maxSize, 则存储list全部且需删除 本地的最后 self._localLengh + distinctList.length - maxSize 条数据
