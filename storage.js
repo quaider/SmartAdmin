@@ -38,11 +38,6 @@
 	}
 
 	PlusStorageDb.prototype = {
-		/*与Dexie api兼容性考虑*/
-		version: function(num) {
-			return this;
-		},
-
 		stores: function(stores) {
 			this._cfg.storeSource = stores;
 			setApiOnPlace([this._db], keys(stores), this._db);
@@ -91,7 +86,7 @@
 			//删除末尾的元素
 			var last = self.getLast();
 			self.remove(key);
-			
+
 			self._service().setItem(realKey, value);
 		},
 
@@ -169,7 +164,7 @@
 			if(!items || items.length <= 0) return;
 			var maxLen = this.maxSize > items.length ? items.length : this.maxSize;
 			for(var i = 0; i < maxLen; i++) {
-				self.set(items[i]);
+				this.set(items[i]);
 			}
 		},
 
@@ -367,7 +362,7 @@
 
 		this.stores = function(stores) {
 			//调用原生的stores
-			this._realDb.version(1).stores(stores);
+			this._realDb.stores(stores);
 
 			this._cfg.storeSource = stores;
 			setApiOnPlace([this._db], keys(stores), this._db);
